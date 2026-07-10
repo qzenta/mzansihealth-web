@@ -16,6 +16,8 @@ export const siteConfig = {
     lizzy: "lizzy@mzansihealth.co.za",
   },
   serviceArea: "Komani and surrounding areas, Eastern Cape",
+  // No confirmed street address in PRD-001 — map centers on the service area, not a specific office pin.
+  mapQuery: "Komani, Eastern Cape, South Africa",
 } as const;
 
 export const services = [
@@ -78,6 +80,15 @@ export const trustPoints = [
     title: "Community Focus",
     description: "Proudly rooted in and committed to the communities we serve.",
   },
+] as const;
+
+export const galleryItems = [
+  { title: "Home Nursing Visits", tag: "Home Nursing" },
+  { title: "Elderly Companionship", tag: "Elderly Care" },
+  { title: "Disability Support in Action", tag: "Disability Support" },
+  { title: "Post-operative Recovery Support", tag: "Post-operative Care" },
+  { title: "Medication Assistance", tag: "Medication Assistance" },
+  { title: "Community Outreach", tag: "Community Healthcare" },
 ] as const;
 
 export const teamMembers = [

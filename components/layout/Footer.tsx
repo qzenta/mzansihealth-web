@@ -4,6 +4,7 @@ import { siteConfig } from "@/lib/site-config";
 const quickLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/our-team", label: "Our Team" },
   { href: "/contact", label: "Contact" },
 ];
@@ -11,6 +12,8 @@ const quickLinks = [
 const legalLinks = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms" },
+  { href: "/popia", label: "POPIA" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 export default function Footer() {
@@ -65,7 +68,7 @@ export default function Footer() {
           <p>
             &copy; {year} {siteConfig.name}. All rights reserved.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             {legalLinks.map((link) => (
               <Link key={link.href} href={link.href} className="hover:text-primary">
                 {link.label}

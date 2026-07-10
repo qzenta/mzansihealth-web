@@ -2,14 +2,14 @@ import Link from "next/link";
 import ServiceCard from "@/components/shared/ServiceCard";
 import TeamMemberCard from "@/components/shared/TeamMemberCard";
 import { services, siteConfig, teamMembers, trustPoints } from "@/lib/site-config";
-import { faqSchema, homeFaqs } from "@/lib/schema";
+import { faqSchema, faqs } from "@/lib/schema";
 
 export default function HomePage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(homeFaqs)) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }}
       />
 
       {/* Hero */}

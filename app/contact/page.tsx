@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactForm from "@/components/shared/ContactForm";
+import GoogleMap from "@/components/shared/GoogleMap";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
@@ -44,6 +45,18 @@ export default function ContactPage() {
               {siteConfig.serviceArea}
             </li>
           </ul>
+        </div>
+      </div>
+
+      <div className="mt-12">
+        <h2 className="text-lg font-semibold text-primary">Where We Serve</h2>
+        <p className="mt-2 max-w-2xl text-sm text-foreground/80">
+          {/* No confirmed office address in PRD-001 — showing the service area rather than a specific pin */}
+          We don&rsquo;t operate from a single storefront — our caregivers come to you across{" "}
+          {siteConfig.serviceArea}.
+        </p>
+        <div className="mt-4">
+          <GoogleMap />
         </div>
       </div>
     </section>

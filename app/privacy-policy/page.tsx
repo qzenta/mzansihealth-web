@@ -12,9 +12,9 @@ export default function PrivacyPolicyPage() {
       <h1 className="text-3xl font-bold text-primary sm:text-4xl">Privacy Policy</h1>
       <div className="mt-6 space-y-4 text-foreground/80">
         <p>
-          {siteConfig.name} respects your privacy. This placeholder policy will be replaced with a
-          finalised version covering data collection, use, and storage once legal review is
-          complete.
+          {siteConfig.name}{" "}
+          respects your privacy. This placeholder policy will be replaced with a finalised
+          version covering data collection, use, and storage once legal review is complete.
         </p>
         <p>
           Information submitted via our contact form (name, phone, email, service required, and

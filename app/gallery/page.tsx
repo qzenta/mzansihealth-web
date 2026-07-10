@@ -1,0 +1,26 @@
+import type { Metadata } from "next";
+import GalleryCard from "@/components/shared/GalleryCard";
+import { galleryItems, siteConfig } from "@/lib/site-config";
+
+export const metadata: Metadata = {
+  title: "Gallery",
+  description: `A look at ${siteConfig.name}'s care in action.`,
+};
+
+export default function GalleryPage() {
+  return (
+    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+      <h1 className="text-center text-3xl font-bold text-primary sm:text-4xl">Gallery</h1>
+      <p className="mx-auto mt-4 max-w-2xl text-center text-foreground/80">
+        {/* Placeholder gallery — real photos pending client content, same as the Team section */}
+        A look at our care in action. Real photos from the field are on their way — for now,
+        here&rsquo;s a preview of the categories we&rsquo;ll be featuring.
+      </p>
+      <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {galleryItems.map((item) => (
+          <GalleryCard key={item.title} title={item.title} tag={item.tag} />
+        ))}
+      </div>
+    </section>
+  );
+}

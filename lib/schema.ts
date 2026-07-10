@@ -33,7 +33,7 @@ export function faqSchema(items: { question: string; answer: string }[]) {
   };
 }
 
-export const homeFaqs = [
+export const faqs = [
   {
     question: "What areas does Mzansi Healthcare serve?",
     answer: `We provide home and community healthcare services across ${siteConfig.serviceArea}.`,
@@ -47,5 +47,15 @@ export const homeFaqs = [
     question: "What healthcare services do you offer?",
     answer:
       "Home nursing, elderly care, disability support, post-operative care, medication assistance, and community healthcare.",
+  },
+  {
+    question: "Are your caregivers qualified?",
+    answer:
+      "Yes — our caregivers are trained and experienced in delivering compassionate, professional home healthcare.",
+  },
+  {
+    question: "How quickly can care begin?",
+    answer:
+      "Reach out via phone, WhatsApp, or the contact form and our team will get back to you promptly to discuss your needs and next steps.",
   },
 ];

@@ -1,0 +1,96 @@
+export const siteConfig = {
+  name: "Mzansi Healthcare",
+  domain: "www.mzansihealth.co.za",
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mzansihealth.co.za",
+  tagline: "Compassionate Home Healthcare You Can Trust",
+  description:
+    "Professional home and community healthcare services for individuals and families across Komani and surrounding areas.",
+  phone: "0728208445",
+  phoneIntl: "+27728208445",
+  whatsappNumber: "27728208445",
+  whatsappLink: "https://wa.me/27728208445",
+  emails: {
+    info: "info@mzansihealth.co.za",
+    admin: "admin@mzansihealth.co.za",
+    azande: "azande@mzansihealth.co.za",
+    lizzy: "lizzy@mzansihealth.co.za",
+  },
+  serviceArea: "Komani and surrounding areas, Eastern Cape",
+} as const;
+
+export const services = [
+  {
+    slug: "home-nursing",
+    name: "Home Nursing",
+    description:
+      "Qualified nursing care delivered in the comfort of your own home, tailored to your medical needs.",
+  },
+  {
+    slug: "elderly-care",
+    name: "Elderly Care",
+    description:
+      "Compassionate, dignified support for elderly family members, from companionship to daily living assistance.",
+  },
+  {
+    slug: "disability-support",
+    name: "Disability Support",
+    description:
+      "Personalised care plans that help individuals living with disabilities maintain independence and quality of life.",
+  },
+  {
+    slug: "post-operative-care",
+    name: "Post-operative Care",
+    description:
+      "Attentive recovery support at home following surgery, working alongside your medical team.",
+  },
+  {
+    slug: "medication-assistance",
+    name: "Medication Assistance",
+    description:
+      "Reliable help managing prescriptions and medication schedules to keep treatment on track.",
+  },
+  {
+    slug: "community-healthcare",
+    name: "Community Healthcare",
+    description:
+      "Outreach healthcare services supporting individuals and families across the wider community.",
+  },
+] as const;
+
+export const trustPoints = [
+  {
+    title: "Compassionate Care",
+    description: "Every client is treated with warmth, patience, and respect.",
+  },
+  {
+    title: "Qualified Caregivers",
+    description: "Our team brings trained, experienced healthcare expertise into your home.",
+  },
+  {
+    title: "Reliable Service",
+    description: "Consistent, dependable care you and your family can count on.",
+  },
+  {
+    title: "Personalised Care",
+    description: "Care plans built around each individual's specific needs.",
+  },
+  {
+    title: "Community Focus",
+    description: "Proudly rooted in and committed to the communities we serve.",
+  },
+] as const;
+
+export const teamMembers = [
+  {
+    name: "Azande",
+    role: "Caregiver",
+    initials: "A",
+    bio: "Placeholder bio — real profile pending client content.",
+  },
+  {
+    name: "Lizzy",
+    role: "Caregiver",
+    initials: "L",
+    bio: "Placeholder bio — real profile pending client content.",
+  },
+] as const;

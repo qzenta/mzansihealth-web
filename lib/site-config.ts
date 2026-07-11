@@ -20,6 +20,63 @@ export const siteConfig = {
   mapQuery: "Komani, Eastern Cape, South Africa",
 } as const;
 
+// Hero carousel — reuses the cohesive session-8 photoshoot set (same free-license Pexels
+// sample imagery, same caregiver/room, per CC-Handoff-Mobile-Nav-Carousel-Banners-Badges).
+// TODO: replace with real client photos per PRD-001 once received.
+export const heroImages = [
+  {
+    src: "/images/hero-caregiver.jpg",
+    alt: "A caregiver holding the hand of an elderly patient",
+  },
+  {
+    src: "/images/service-elderly-care.jpg",
+    alt: "A caregiver assisting an elderly patient at home",
+  },
+  {
+    src: "/images/service-post-operative.jpg",
+    alt: "Family and caregivers supporting a patient during recovery",
+  },
+] as const;
+
+// Per-page banners — reuse existing sample imagery cropped to a wide banner aspect ratio,
+// same sourcing/TODO convention as the hero and service card photos above.
+export const pageBanners = {
+  about: {
+    src: "/images/service-post-operative.jpg",
+    alt: "Caregivers and family supporting a patient together",
+  },
+  services: {
+    src: "/images/service-home-nursing.jpg",
+    alt: "A nurse providing home healthcare to a patient",
+  },
+  gallery: {
+    src: "/images/service-community.jpg",
+    alt: "Community healthcare outreach in action",
+  },
+  ourTeam: {
+    src: "/images/service-elderly-care.jpg",
+    alt: "A caregiver attending to an elderly patient",
+  },
+  contact: {
+    src: "/images/hero-caregiver.jpg",
+    alt: "A caregiver holding the hand of an elderly patient",
+  },
+  faq: {
+    src: "/images/service-medication.jpg",
+    alt: "Medication assistance for a patient",
+  },
+} as const;
+
+// Trust badges — generic, descriptive, no third-party names/logos. Do NOT add claim-based
+// badges (e.g. "Medical Aid Accepted", "NHI Registered") without Daniel's confirmation that
+// they are actually true — see CC-Handoff-Mobile-Nav-Carousel-Banners-Badges.md §4.
+export const trustBadges = [
+  { label: "Home Visits" },
+  { label: "Flexible Scheduling" },
+  { label: "Qualified Caregivers" },
+  { label: "Komani & Surrounds" },
+] as const;
+
 // Service card photos are free-license Pexels stock (sample imagery per CC-Handoff-Hero-Imagery),
 // not real client/caregiver photos. TODO: replace with real client photos per PRD-001 once received.
 export const services = [

@@ -1,8 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
+import HeroCarousel from "@/components/shared/HeroCarousel";
 import ServiceCard from "@/components/shared/ServiceCard";
 import TeamMemberCard from "@/components/shared/TeamMemberCard";
-import { services, siteConfig, teamMembers, trustPoints } from "@/lib/site-config";
+import TrustBadgeMarquee from "@/components/shared/TrustBadgeMarquee";
+import { heroImages, services, siteConfig, teamMembers, trustBadges, trustPoints } from "@/lib/site-config";
 import { faqSchema, faqs } from "@/lib/schema";
 
 export default function HomePage() {
@@ -13,19 +14,10 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }}
       />
 
-      {/* Hero — sample/stock photo (Pexels, free license), not a real client photo.
-          TODO: replace with real client photo per PRD-001 once received. */}
+      {/* Hero — sample/stock photos (Pexels, free license), not real client photos.
+          TODO: replace with real client photos per PRD-001 once received. */}
       <section className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <Image
-            src="/images/hero-caregiver.jpg"
-            alt="A caregiver holding the hand of an elderly patient"
-            fill
-            priority
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
-        </div>
+        <HeroCarousel images={heroImages} />
         <div className="relative mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 sm:py-36">
           <h1 className="text-4xl font-bold text-white sm:text-5xl">{siteConfig.tagline}</h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
@@ -53,6 +45,10 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Trust badges — generic/descriptive only, no third-party names or logos.
+          See lib/site-config.ts for the confirmation note before adding claim-based badges. */}
+      <TrustBadgeMarquee badges={trustBadges} />
 
       {/* Trust points */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">

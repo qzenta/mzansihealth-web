@@ -20,42 +20,50 @@ export const siteConfig = {
   mapQuery: "Komani, Eastern Cape, South Africa",
 } as const;
 
+// Service card photos are free-license Pexels stock (sample imagery per CC-Handoff-Hero-Imagery),
+// not real client/caregiver photos. TODO: replace with real client photos per PRD-001 once received.
 export const services = [
   {
     slug: "home-nursing",
     name: "Home Nursing",
     description:
       "Qualified nursing care delivered in the comfort of your own home, tailored to your medical needs.",
+    image: "/images/service-home-nursing.jpg",
   },
   {
     slug: "elderly-care",
     name: "Elderly Care",
     description:
       "Compassionate, dignified support for elderly family members, from companionship to daily living assistance.",
+    image: "/images/service-elderly-care.jpg",
   },
   {
     slug: "disability-support",
     name: "Disability Support",
     description:
       "Personalised care plans that help individuals living with disabilities maintain independence and quality of life.",
+    image: "/images/service-disability-support.jpg",
   },
   {
     slug: "post-operative-care",
     name: "Post-operative Care",
     description:
       "Attentive recovery support at home following surgery, working alongside your medical team.",
+    image: "/images/service-post-operative.jpg",
   },
   {
     slug: "medication-assistance",
     name: "Medication Assistance",
     description:
       "Reliable help managing prescriptions and medication schedules to keep treatment on track.",
+    image: "/images/service-medication.jpg",
   },
   {
     slug: "community-healthcare",
     name: "Community Healthcare",
     description:
       "Outreach healthcare services supporting individuals and families across the wider community.",
+    image: "/images/service-community.jpg",
   },
 ] as const;
 

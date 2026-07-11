@@ -1,13 +1,27 @@
+import Image from "next/image";
+
 interface ServiceCardProps {
   name: string;
   description: string;
+  image: string;
 }
 
-export default function ServiceCard({ name, description }: ServiceCardProps) {
+export default function ServiceCard({ name, description, image }: ServiceCardProps) {
   return (
-    <div className="rounded-2xl border border-neutral bg-white p-6 shadow-sm transition hover:shadow-md">
-      <h3 className="text-lg font-semibold text-primary">{name}</h3>
-      <p className="mt-2 text-sm text-foreground/80">{description}</p>
+    <div className="overflow-hidden rounded-2xl border border-neutral bg-white shadow-sm transition hover:shadow-md">
+      <div className="relative aspect-video w-full">
+        <Image
+          src={image}
+          alt={name}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover"
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="text-lg font-semibold text-primary">{name}</h3>
+        <p className="mt-2 text-sm text-foreground/80">{description}</p>
+      </div>
     </div>
   );
 }

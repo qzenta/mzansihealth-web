@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import ServiceCard from "@/components/shared/ServiceCard";
 import TeamMemberCard from "@/components/shared/TeamMemberCard";
@@ -12,11 +13,22 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }}
       />
 
-      {/* Hero */}
-      <section className="bg-neutral/40">
-        <div className="mx-auto max-w-6xl px-4 py-20 text-center sm:px-6">
-          <h1 className="text-4xl font-bold text-primary sm:text-5xl">{siteConfig.tagline}</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-foreground/80">
+      {/* Hero — sample/stock photo (Pexels, free license), not a real client photo.
+          TODO: replace with real client photo per PRD-001 once received. */}
+      <section className="relative overflow-hidden">
+        <div className="absolute inset-0">
+          <Image
+            src="/images/hero-caregiver.jpg"
+            alt="A caregiver holding the hand of an elderly patient"
+            fill
+            priority
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+        </div>
+        <div className="relative mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 sm:py-36">
+          <h1 className="text-4xl font-bold text-white sm:text-5xl">{siteConfig.tagline}</h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
             {siteConfig.description}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
@@ -34,7 +46,7 @@ export default function HomePage() {
             </a>
             <Link
               href="/contact"
-              className="rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-white"
+              className="rounded-full border border-white px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-primary"
             >
               Request Care
             </Link>
@@ -63,7 +75,12 @@ export default function HomePage() {
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">Our Services</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
-              <ServiceCard key={service.slug} name={service.name} description={service.description} />
+              <ServiceCard
+                key={service.slug}
+                name={service.name}
+                description={service.description}
+                image={service.image}
+              />
             ))}
           </div>
           <div className="mt-10 text-center">

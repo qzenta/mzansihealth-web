@@ -16,7 +16,12 @@ export default function ServicesPage() {
       </p>
       <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {services.map((service) => (
-          <ServiceCard key={service.slug} name={service.name} description={service.description} />
+          <ServiceCard
+            key={service.slug}
+            name={service.name}
+            description={service.description}
+            image={service.image}
+          />
         ))}
       </div>
     </section>

@@ -18,12 +18,14 @@ export default function HomePage() {
           TODO: replace with real client photos per PRD-001 once received. */}
       <section className="relative overflow-hidden">
         <HeroCarousel images={heroImages} />
-        <div className="relative mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 sm:py-36">
-          <h1 className="text-4xl font-bold text-white sm:text-5xl">{siteConfig.tagline}</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+        <div className="relative mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 sm:py-36 sm:text-right">
+          <h1 className="text-4xl font-bold text-white sm:ml-auto sm:max-w-2xl sm:text-5xl">
+            {siteConfig.tagline}
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90 sm:mr-0 sm:ml-auto">
             {siteConfig.description}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
+          <div className="mt-8 flex flex-wrap justify-center gap-4 sm:justify-end">
             <a
               href={`tel:${siteConfig.phoneIntl}`}
               className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
@@ -51,17 +53,27 @@ export default function HomePage() {
       <TrustBadgeMarquee badges={trustBadges} />
 
       {/* Trust points */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">
-          Why Families Choose {siteConfig.name}
-        </h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-          {trustPoints.map((point) => (
-            <div key={point.title} className="rounded-2xl border border-neutral bg-white p-6 text-center shadow-sm">
-              <h3 className="font-semibold text-primary">{point.title}</h3>
-              <p className="mt-2 text-sm text-foreground/80">{point.description}</p>
-            </div>
-          ))}
+      <section className="relative overflow-hidden py-16">
+        <div
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse at top, color-mix(in srgb, var(--color-secondary) 12%, transparent), transparent 60%)",
+          }}
+          aria-hidden="true"
+        />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">
+            Why Families Choose {siteConfig.name}
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {trustPoints.map((point) => (
+              <div key={point.title} className="rounded-2xl border border-neutral bg-white p-6 text-center shadow-sm">
+                <h3 className="font-semibold text-primary">{point.title}</h3>
+                <p className="mt-2 text-sm text-foreground/80">{point.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -76,6 +88,7 @@ export default function HomePage() {
                 name={service.name}
                 description={service.description}
                 image={service.image}
+                objectPosition={service.objectPosition}
               />
             ))}
           </div>

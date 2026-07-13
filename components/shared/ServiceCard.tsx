@@ -4,9 +4,10 @@ interface ServiceCardProps {
   name: string;
   description: string;
   image: string;
+  objectPosition?: string;
 }
 
-export default function ServiceCard({ name, description, image }: ServiceCardProps) {
+export default function ServiceCard({ name, description, image, objectPosition }: ServiceCardProps) {
   return (
     <div className="overflow-hidden rounded-2xl border border-neutral bg-white shadow-sm transition hover:shadow-md">
       <div className="relative aspect-video w-full">
@@ -15,6 +16,7 @@ export default function ServiceCard({ name, description, image }: ServiceCardPro
           alt={name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          style={{ objectPosition: objectPosition ?? "center" }}
           className="object-cover"
         />
       </div>

@@ -20,28 +20,28 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-16 border-t border-neutral bg-neutral/40">
+    <footer className="mt-16 bg-primary-dark text-white">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="text-lg font-bold text-primary">{siteConfig.name}</p>
-          <p className="mt-2 text-sm text-foreground/80">{siteConfig.tagline}</p>
+          <p className="text-lg font-bold text-white">{siteConfig.name}</p>
+          <p className="mt-2 text-sm text-white/70">{siteConfig.tagline}</p>
         </div>
 
         <div>
-          <p className="text-sm font-semibold text-foreground">Contact</p>
-          <ul className="mt-2 space-y-1 text-sm text-foreground/80">
+          <p className="text-sm font-semibold text-white">Contact</p>
+          <ul className="mt-2 space-y-1 text-sm text-white/70">
             <li>
-              <a href={`tel:${siteConfig.phoneIntl}`} className="hover:text-primary">
+              <a href={`tel:${siteConfig.phoneIntl}`} className="hover:text-white">
                 {siteConfig.phone}
               </a>
             </li>
             <li>
-              <a href={siteConfig.whatsappLink} className="hover:text-primary">
+              <a href={siteConfig.whatsappLink} className="hover:text-white">
                 WhatsApp
               </a>
             </li>
             <li>
-              <a href={`mailto:${siteConfig.emails.info}`} className="hover:text-primary">
+              <a href={`mailto:${siteConfig.emails.info}`} className="hover:text-white">
                 {siteConfig.emails.info}
               </a>
             </li>
@@ -50,11 +50,11 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-sm font-semibold text-foreground">Quick Links</p>
-          <ul className="mt-2 space-y-1 text-sm text-foreground/80">
+          <p className="text-sm font-semibold text-white">Quick Links</p>
+          <ul className="mt-2 space-y-1 text-sm text-white/70">
             {quickLinks.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="hover:text-primary">
+                <Link href={link.href} className="hover:text-white">
                   {link.label}
                 </Link>
               </li>
@@ -63,14 +63,14 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-neutral">
-        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-foreground/60 sm:flex-row sm:items-center sm:justify-between sm:px-6">
+      <div className="border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>
             &copy; {year} {siteConfig.name}. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4">
             {legalLinks.map((link) => (
-              <Link key={link.href} href={link.href} className="hover:text-primary">
+              <Link key={link.href} href={link.href} className="hover:text-white">
                 {link.label}
               </Link>
             ))}

@@ -3,8 +3,7 @@ export const siteConfig = {
   domain: "www.mzansihealth.co.za",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mzansihealth.co.za",
   tagline: "Compassionate Home Healthcare You Can Trust",
-  description:
-    "Professional home and community healthcare services for individuals and families across Komani and surrounding areas.",
+  description: "Professional home and community care for individuals and families across Komani.",
   phone: "0728208445",
   phoneIntl: "+27728208445",
   whatsappNumber: "27728208445",
@@ -27,43 +26,54 @@ export const heroImages = [
   {
     src: "/images/hero-caregiver.jpg",
     alt: "A caregiver holding the hand of an elderly patient",
+    objectPosition: "center 30%",
   },
   {
     src: "/images/service-elderly-care.jpg",
     alt: "A caregiver assisting an elderly patient at home",
+    objectPosition: "center 35%",
   },
   {
     src: "/images/service-post-operative.jpg",
     alt: "Family and caregivers supporting a patient during recovery",
+    objectPosition: "center 20%",
   },
 ] as const;
 
 // Per-page banners — reuse existing sample imagery cropped to a wide banner aspect ratio,
 // same sourcing/TODO convention as the hero and service card photos above.
+// About uses the faceless hands/wheelchair shot instead of a face-forward photo — an "about"
+// banner doesn't need a face, and it avoids re-showing the same person as the hero/service cards.
 export const pageBanners = {
   about: {
-    src: "/images/service-post-operative.jpg",
-    alt: "Caregivers and family supporting a patient together",
+    src: "/images/service-disability-support.jpg",
+    alt: "A caregiver's hands assisting with a wheelchair at home",
+    objectPosition: "center",
   },
   services: {
     src: "/images/service-home-nursing.jpg",
     alt: "A nurse providing home healthcare to a patient",
+    objectPosition: "center 25%",
   },
   gallery: {
     src: "/images/service-community.jpg",
     alt: "Community healthcare outreach in action",
+    objectPosition: "center 25%",
   },
   ourTeam: {
     src: "/images/service-elderly-care.jpg",
     alt: "A caregiver attending to an elderly patient",
+    objectPosition: "center 30%",
   },
   contact: {
     src: "/images/hero-caregiver.jpg",
     alt: "A caregiver holding the hand of an elderly patient",
+    objectPosition: "center 25%",
   },
   faq: {
     src: "/images/service-medication.jpg",
     alt: "Medication assistance for a patient",
+    objectPosition: "center",
   },
 } as const;
 
@@ -86,6 +96,7 @@ export const services = [
     description:
       "Qualified nursing care delivered in the comfort of your own home, tailored to your medical needs.",
     image: "/images/service-home-nursing.jpg",
+    objectPosition: "center 25%",
   },
   {
     slug: "elderly-care",
@@ -93,6 +104,7 @@ export const services = [
     description:
       "Compassionate, dignified support for elderly family members, from companionship to daily living assistance.",
     image: "/images/service-elderly-care.jpg",
+    objectPosition: "center 30%",
   },
   {
     slug: "disability-support",
@@ -100,6 +112,7 @@ export const services = [
     description:
       "Personalised care plans that help individuals living with disabilities maintain independence and quality of life.",
     image: "/images/service-disability-support.jpg",
+    objectPosition: "center",
   },
   {
     slug: "post-operative-care",
@@ -107,6 +120,7 @@ export const services = [
     description:
       "Attentive recovery support at home following surgery, working alongside your medical team.",
     image: "/images/service-post-operative.jpg",
+    objectPosition: "center 20%",
   },
   {
     slug: "medication-assistance",
@@ -114,6 +128,7 @@ export const services = [
     description:
       "Reliable help managing prescriptions and medication schedules to keep treatment on track.",
     image: "/images/service-medication.jpg",
+    objectPosition: "center",
   },
   {
     slug: "community-healthcare",
@@ -121,6 +136,7 @@ export const services = [
     description:
       "Outreach healthcare services supporting individuals and families across the wider community.",
     image: "/images/service-community.jpg",
+    objectPosition: "center 25%",
   },
 ] as const;
 

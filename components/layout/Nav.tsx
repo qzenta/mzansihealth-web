@@ -18,6 +18,15 @@ export default function Nav() {
 
   return (
     <header className="relative border-b border-neutral bg-white">
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 bg-primary-dark px-4 py-1.5 text-center text-xs text-white sm:justify-end sm:px-6">
+        <a href={`mailto:${siteConfig.emails.info}`} className="hover:underline">
+          {siteConfig.emails.info}
+        </a>
+        <a href={`tel:${siteConfig.phoneIntl}`} className="hover:underline">
+          {siteConfig.phone}
+        </a>
+        <span className="hidden md:inline">{siteConfig.serviceArea}</span>
+      </div>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
         <Link href="/" className="text-lg font-bold text-primary" onClick={() => setIsOpen(false)}>
           {siteConfig.name}

@@ -10,7 +10,7 @@ export default function GoogleMap() {
         title={`Map of ${siteConfig.serviceArea}`}
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
-        className="h-80 w-full border-0"
+        className="h-64 w-full border-0 sm:h-96 lg:h-[480px]"
       />
     </div>
   );

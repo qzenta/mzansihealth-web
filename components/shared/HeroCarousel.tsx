@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 interface HeroCarouselProps {
-  images: readonly { src: string; alt: string }[];
+  images: readonly { src: string; alt: string; objectPosition?: string }[];
   intervalMs?: number;
 }
 
@@ -46,6 +46,7 @@ export default function HeroCarousel({ images, intervalMs = 6000 }: HeroCarousel
           alt={image.alt}
           fill
           priority={i === 0}
+          style={{ objectPosition: image.objectPosition ?? "center" }}
           className={`object-cover transition-opacity duration-1000 ease-in-out ${
             i === index ? "opacity-100" : "opacity-0"
           }`}

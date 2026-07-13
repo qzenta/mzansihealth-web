@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageBanner title={`About ${siteConfig.name}`} image={pageBanners.about} />
+      <PageBanner title={`About ${siteConfig.name}`} image={pageBanners.about} tall />
       <section className="mx-auto max-w-4xl px-4 py-16 sm:px-6">
         <div className="space-y-4 text-foreground/80">
           <p>
@@ -26,15 +26,19 @@ export default function AboutPage() {
             supplied.
           </p>
         </div>
+      </section>
 
-        <h2 className="mt-12 text-2xl font-bold text-primary">Why Families Choose Us</h2>
-        <div className="mt-6 grid gap-6 sm:grid-cols-2">
-          {trustPoints.map((point) => (
-            <div key={point.title} className="rounded-2xl border border-neutral bg-white p-6 shadow-sm">
-              <h3 className="font-semibold text-primary">{point.title}</h3>
-              <p className="mt-2 text-sm text-foreground/80">{point.description}</p>
-            </div>
-          ))}
+      <section className="bg-neutral/40 py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6">
+          <h2 className="text-2xl font-bold text-primary">Why Families Choose Us</h2>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {trustPoints.map((point) => (
+              <div key={point.title} className="rounded-2xl border border-neutral bg-white p-6 shadow-sm">
+                <h3 className="font-semibold text-primary">{point.title}</h3>
+                <p className="mt-2 text-sm text-foreground/80">{point.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </>

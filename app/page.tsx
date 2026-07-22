@@ -3,7 +3,7 @@ import HeroCarousel from "@/components/shared/HeroCarousel";
 import ServiceCard from "@/components/shared/ServiceCard";
 import TeamMemberCard from "@/components/shared/TeamMemberCard";
 import TrustBadgeMarquee from "@/components/shared/TrustBadgeMarquee";
-import { heroImages, services, siteConfig, teamMembers, trustBadges, trustPoints } from "@/lib/site-config";
+import { heroImages, services, siteConfig, teamMembers, trustBadges, whyChooseUs } from "@/lib/site-config";
 import { faqSchema, faqs } from "@/lib/schema";
 
 export default function HomePage() {
@@ -64,10 +64,10 @@ export default function HomePage() {
         />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">
-            Why Families Choose {siteConfig.name}
+            Why Choose {siteConfig.name} — The Mzansi Difference
           </h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
-            {trustPoints.map((point) => (
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {whyChooseUs.map((point) => (
               <div key={point.title} className="rounded-2xl border border-neutral bg-white p-6 text-center shadow-sm">
                 <h3 className="font-semibold text-primary">{point.title}</h3>
                 <p className="mt-2 text-sm text-foreground/80">{point.description}</p>

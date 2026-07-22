@@ -12,7 +12,10 @@ export function organizationSchema() {
     areaServed: siteConfig.serviceArea,
     address: {
       "@type": "PostalAddress",
-      addressRegion: "Eastern Cape",
+      streetAddress: siteConfig.addressParts.streetAddress,
+      addressLocality: siteConfig.addressParts.addressLocality,
+      postalCode: siteConfig.addressParts.postalCode,
+      addressRegion: siteConfig.addressParts.addressRegion,
       addressCountry: "ZA",
     },
   };
@@ -46,7 +49,7 @@ export const faqs = [
   {
     question: "What healthcare services do you offer?",
     answer:
-      "Home nursing, elderly care, disability support, post-operative care, medication assistance, and community healthcare.",
+      "Post-hospital recovery care, elderly care and companionship, chronic illness and palliative care, medication supervision and vital checks, 24-hour live-in and hourly care, hospital-to-home transition support, and disability care.",
   },
   {
     question: "Are your caregivers qualified?",

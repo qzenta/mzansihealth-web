@@ -33,11 +33,19 @@ export default function Footer() {
             <li>
               <a href={`tel:${siteConfig.phoneIntl}`} className="hover:text-white">
                 {siteConfig.phone}
+              </a>{" "}
+              /{" "}
+              <a href={`tel:${siteConfig.phoneSecondaryIntl}`} className="hover:text-white">
+                {siteConfig.phoneSecondary}
               </a>
             </li>
             <li>
               <a href={siteConfig.whatsappLink} className="hover:text-white">
                 WhatsApp
+              </a>{" "}
+              /{" "}
+              <a href={siteConfig.whatsappSecondaryLink} className="hover:text-white">
+                WhatsApp (alt)
               </a>
             </li>
             <li>
@@ -45,7 +53,7 @@ export default function Footer() {
                 {siteConfig.emails.info}
               </a>
             </li>
-            <li>{siteConfig.serviceArea}</li>
+            <li>{siteConfig.address}</li>
           </ul>
         </div>
 
@@ -66,7 +74,7 @@ export default function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-4 py-4 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between sm:px-6">
           <p>
-            &copy; {year} {siteConfig.name}. All rights reserved.
+            &copy; {year} {siteConfig.legalName}. All rights reserved.
           </p>
           <div className="flex flex-wrap gap-4">
             {legalLinks.map((link) => (

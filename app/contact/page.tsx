@@ -28,12 +28,20 @@ export default function ContactPage() {
                 <span className="block text-sm font-medium text-foreground">Phone</span>
                 <a href={`tel:${siteConfig.phoneIntl}`} className="hover:text-primary">
                   {siteConfig.phone}
+                </a>{" "}
+                /{" "}
+                <a href={`tel:${siteConfig.phoneSecondaryIntl}`} className="hover:text-primary">
+                  {siteConfig.phoneSecondary}
                 </a>
               </li>
               <li>
                 <span className="block text-sm font-medium text-foreground">WhatsApp</span>
                 <a href={siteConfig.whatsappLink} className="hover:text-primary">
                   Message us on WhatsApp
+                </a>{" "}
+                /{" "}
+                <a href={siteConfig.whatsappSecondaryLink} className="hover:text-primary">
+                  alt line
                 </a>
               </li>
               <li>
@@ -41,6 +49,10 @@ export default function ContactPage() {
                 <a href={`mailto:${siteConfig.emails.info}`} className="hover:text-primary">
                   {siteConfig.emails.info}
                 </a>
+              </li>
+              <li>
+                <span className="block text-sm font-medium text-foreground">Address</span>
+                {siteConfig.address}
               </li>
               <li>
                 <span className="block text-sm font-medium text-foreground">Service Area</span>
@@ -53,9 +65,8 @@ export default function ContactPage() {
         <div className="mt-12">
           <h2 className="text-lg font-semibold text-primary">Where We Serve</h2>
           <p className="mt-2 max-w-2xl text-sm text-foreground/80">
-            {/* No confirmed office address in PRD-001 — showing the service area rather than a specific pin */}
-            We don&rsquo;t operate from a single storefront — our caregivers come to you across{" "}
-            {siteConfig.serviceArea}.
+            You&rsquo;ll find us at {siteConfig.address}, and our caregivers come directly to you
+            across {siteConfig.serviceArea}.
           </p>
           <div className="mt-4">
             <GoogleMap />

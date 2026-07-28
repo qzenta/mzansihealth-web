@@ -15,40 +15,9 @@ export default function HomePage() {
       />
 
       {/* Hero — sample/stock photos (Pexels, free license), not real client photos.
-          TODO: replace with real client photos per PRD-001 once received. */}
-      <section className="relative overflow-hidden">
-        <HeroCarousel images={heroImages} />
-        <div className="relative mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 sm:py-40 sm:text-right">
-          <h1 className="animate-fade-in-up text-5xl font-bold text-white sm:ml-auto sm:max-w-3xl sm:text-6xl">
-            {siteConfig.tagline}
-          </h1>
-          <p
-            className="animate-fade-in-up mx-auto mt-4 max-w-2xl text-lg text-white/90 sm:mr-0 sm:ml-auto [animation-delay:150ms]"
-          >
-            {siteConfig.description}
-          </p>
-          <div className="animate-fade-in-up mt-8 flex flex-wrap justify-center gap-4 sm:justify-end [animation-delay:300ms]">
-            <a
-              href={`tel:${siteConfig.phoneIntl}`}
-              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-primary-dark"
-            >
-              Call Now
-            </a>
-            <a
-              href={siteConfig.whatsappLink}
-              className="rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:opacity-90"
-            >
-              WhatsApp
-            </a>
-            <Link
-              href="/contact"
-              className="rounded-full border border-white px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-white hover:text-primary"
-            >
-              Request Care
-            </Link>
-          </div>
-        </div>
-      </section>
+          TODO: replace with real client photos per PRD-001 once received.
+          Headline/description vary per slide — see HeroCarousel + heroImages in site-config.ts. */}
+      <HeroCarousel slides={heroImages} />
 
       {/* Trust badges — generic/descriptive only, no third-party names or logos.
           See lib/site-config.ts for the confirmation note before adding claim-based badges. */}

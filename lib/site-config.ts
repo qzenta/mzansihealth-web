@@ -34,24 +34,33 @@ export const siteConfig = {
   mapQuery: "15 Red Duiker Road, Madeira Park, Queenstown, 5319, Eastern Cape, South Africa",
 } as const;
 
-// Hero carousel — deliberately pulls from 3 different photo settings/subjects (not the same
-// photoshoot) so the rotation doesn't read as one repeated scene. Free-license Pexels sample
-// imagery. TODO: replace with real client photos per PRD-001 once received.
+// Hero carousel — 3 different photo settings/subjects (not the same photoshoot), each with its
+// own headline/description so the copy varies with the image instead of repeating. Slide 3
+// replaced 13 Jul 2026: the previous outdoor rural-outreach photo read as NGO/aid-camp imagery
+// rather than a professional local home-healthcare service — swapped for an indoor home-visit
+// scene instead. Free-license Pexels sample imagery. TODO: replace with real client photos per
+// PRD-001 once received.
 export const heroImages = [
   {
     src: "/images/hero-caregiver.jpg",
     alt: "A caregiver holding the hand of an elderly patient",
     objectPosition: "center 30%",
+    headline: "Compassionate Home Healthcare You Can Trust",
+    description: "Professional home and community care for individuals and families across Komani.",
   },
   {
     src: "/images/service-home-nursing.jpg",
     alt: "A nurse checking a patient's vital signs at home",
     objectPosition: "center 15%",
+    headline: "Skilled Nursing Care, Delivered at Home",
+    description: "Qualified caregivers providing medication supervision, vital checks, and clinical support at home.",
   },
   {
-    src: "/images/service-community.jpg",
-    alt: "Community healthcare outreach in action",
-    objectPosition: "center 15%",
+    src: "/images/hero-home-visit.jpg",
+    alt: "A healthcare worker checking a patient's vital signs during a home visit",
+    objectPosition: "center 20%",
+    headline: "Care That Meets You, Wherever You Are",
+    description: "From post-hospital recovery to 24-hour live-in support, our team is with you every step of the way.",
   },
 ] as const;
 
@@ -234,14 +243,52 @@ export const whyChooseUs = [
   },
 ] as const;
 
+// Gallery photos — free-license Pexels sample imagery sourced 13 Jul 2026 (previously this page
+// had no real images at all, just an icon placeholder). TODO: replace with real client photos
+// per PRD-001 once received.
 export const galleryItems = [
-  { title: "Post-Hospital Recovery in Action", tag: "Post-Hospital Recovery Care" },
-  { title: "Elderly Companionship", tag: "Elderly Care and Companionship" },
-  { title: "Chronic Illness and Palliative Support", tag: "Chronic Illness and Palliative Care" },
-  { title: "Medication and Vital Checks", tag: "Medication Supervision and Vital Checks" },
-  { title: "Live-In and Hourly Care", tag: "24-Hour Live-In and Hourly Care" },
-  { title: "Hospital-to-Home Transitions", tag: "Hospital-to-Home Transition Support" },
-  { title: "Disability Care in Action", tag: "Disability Care" },
+  {
+    title: "Post-Hospital Recovery in Action",
+    tag: "Post-Hospital Recovery Care",
+    image: "/images/gallery/gallery-post-hospital-recovery.jpg",
+    objectPosition: "center 30%",
+  },
+  {
+    title: "Elderly Companionship",
+    tag: "Elderly Care and Companionship",
+    image: "/images/gallery/gallery-elderly-companionship.jpg",
+    objectPosition: "center 20%",
+  },
+  {
+    title: "Chronic Illness and Palliative Support",
+    tag: "Chronic Illness and Palliative Care",
+    image: "/images/gallery/gallery-chronic-palliative.jpg",
+    objectPosition: "center",
+  },
+  {
+    title: "Medication and Vital Checks",
+    tag: "Medication Supervision and Vital Checks",
+    image: "/images/gallery/gallery-medication-vitals.jpg",
+    objectPosition: "center 25%",
+  },
+  {
+    title: "Live-In and Hourly Care",
+    tag: "24-Hour Live-In and Hourly Care",
+    image: "/images/gallery/gallery-live-in-care.jpg",
+    objectPosition: "center",
+  },
+  {
+    title: "Hospital-to-Home Transitions",
+    tag: "Hospital-to-Home Transition Support",
+    image: "/images/gallery/gallery-hospital-transition.jpg",
+    objectPosition: "center 30%",
+  },
+  {
+    title: "Disability Care in Action",
+    tag: "Disability Care",
+    image: "/images/gallery/gallery-disability-care.jpg",
+    objectPosition: "center",
+  },
 ] as const;
 
 // Real team profiles from the Website Draft (13 Jul 2026), with real photos (added per Daniel,

@@ -70,7 +70,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
         />
       </div>
 
-      <div className="relative mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 sm:py-40 sm:text-right">
+      <div className="relative mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20 sm:text-right">
         <div className="relative">
           {slides.map((slide, i) => (
             <div

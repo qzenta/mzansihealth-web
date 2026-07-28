@@ -19,28 +19,30 @@ export default function HomePage() {
       <section className="relative overflow-hidden">
         <HeroCarousel images={heroImages} />
         <div className="relative mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 sm:py-40 sm:text-right">
-          <h1 className="text-5xl font-bold text-white sm:ml-auto sm:max-w-2xl sm:text-6xl">
+          <h1 className="animate-fade-in-up text-5xl font-bold text-white sm:ml-auto sm:max-w-3xl sm:text-6xl">
             {siteConfig.tagline}
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90 sm:mr-0 sm:ml-auto">
+          <p
+            className="animate-fade-in-up mx-auto mt-4 max-w-2xl text-lg text-white/90 sm:mr-0 sm:ml-auto [animation-delay:150ms]"
+          >
             {siteConfig.description}
           </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4 sm:justify-end">
+          <div className="animate-fade-in-up mt-8 flex flex-wrap justify-center gap-4 sm:justify-end [animation-delay:300ms]">
             <a
               href={`tel:${siteConfig.phoneIntl}`}
-              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-dark"
+              className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-primary-dark"
             >
               Call Now
             </a>
             <a
               href={siteConfig.whatsappLink}
-              className="rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white hover:opacity-90"
+              className="rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:opacity-90"
             >
               WhatsApp
             </a>
             <Link
               href="/contact"
-              className="rounded-full border border-white px-6 py-3 text-sm font-semibold text-white hover:bg-white hover:text-primary"
+              className="rounded-full border border-white px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-white hover:text-primary"
             >
               Request Care
             </Link>

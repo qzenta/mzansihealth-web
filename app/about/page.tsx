@@ -19,11 +19,11 @@ export default function AboutPage() {
         </div>
 
         <div className="mt-10 grid gap-6 sm:grid-cols-2">
-          <div className="rounded-2xl border border-neutral bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-neutral bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
             <h2 className="font-semibold text-primary">Our Mission</h2>
             <p className="mt-2 text-sm text-foreground/80">{about.mission}</p>
           </div>
-          <div className="rounded-2xl border border-neutral bg-white p-6 shadow-sm">
+          <div className="rounded-2xl border border-neutral bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
             <h2 className="font-semibold text-primary">Our Vision</h2>
             <p className="mt-2 text-sm text-foreground/80">{about.vision}</p>
           </div>
@@ -35,7 +35,10 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold text-primary">Our Values</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {values.map((value) => (
-              <div key={value.title} className="rounded-2xl border border-neutral bg-white p-6 shadow-sm">
+              <div
+                key={value.title}
+                className="rounded-2xl border border-neutral bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+              >
                 <h3 className="font-semibold text-primary">{value.title}</h3>
                 <p className="mt-2 text-sm text-foreground/80">{value.description}</p>
               </div>

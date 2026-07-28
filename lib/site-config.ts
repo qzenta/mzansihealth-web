@@ -34,9 +34,9 @@ export const siteConfig = {
   mapQuery: "15 Red Duiker Road, Madeira Park, Queenstown, 5319, Eastern Cape, South Africa",
 } as const;
 
-// Hero carousel — reuses the cohesive session-8 photoshoot set (same free-license Pexels
-// sample imagery, same caregiver/room, per CC-Handoff-Mobile-Nav-Carousel-Banners-Badges).
-// TODO: replace with real client photos per PRD-001 once received.
+// Hero carousel — deliberately pulls from 3 different photo settings/subjects (not the same
+// photoshoot) so the rotation doesn't read as one repeated scene. Free-license Pexels sample
+// imagery. TODO: replace with real client photos per PRD-001 once received.
 export const heroImages = [
   {
     src: "/images/hero-caregiver.jpg",
@@ -44,14 +44,14 @@ export const heroImages = [
     objectPosition: "center 30%",
   },
   {
-    src: "/images/service-elderly-care.jpg",
-    alt: "A caregiver assisting an elderly patient at home",
-    objectPosition: "center 35%",
+    src: "/images/service-home-nursing.jpg",
+    alt: "A nurse checking a patient's vital signs at home",
+    objectPosition: "center 15%",
   },
   {
-    src: "/images/service-post-operative.jpg",
-    alt: "Family and caregivers supporting a patient during recovery",
-    objectPosition: "center 20%",
+    src: "/images/service-community.jpg",
+    alt: "Community healthcare outreach in action",
+    objectPosition: "center 15%",
   },
 ] as const;
 
@@ -234,12 +234,13 @@ export const galleryItems = [
   { title: "Disability Care in Action", tag: "Disability Care" },
 ] as const;
 
-// Real team profiles from the Website Draft (13 Jul 2026) — photos still pending, use the
-// generic icon avatar (TeamMemberCard) until real photos arrive.
+// Real team profiles from the Website Draft (13 Jul 2026), with real photos (added per Daniel,
+// matched to names via filename). Falls back to the generic icon avatar if photo is omitted.
 export const teamMembers = [
   {
     name: "Azande Nomnqa",
     role: "Managing Director & Founder",
+    tagline: "BCom Accounting · Financial Management · Healthcare Administration",
     bio: "Founder and Managing Director, with a BCom in Accounting from the University of Johannesburg and a background in financial administration at Pretor Group. Azande founded Mzansi HealthCare to bring compassionate, professional, and dignified care to patients recovering at home.",
     photo: {
       src: "/images/team/azande-nomnqa.jpg",
@@ -250,6 +251,7 @@ export const teamMembers = [
   {
     name: "Elizabeth Ratau",
     role: "Clinical Manager",
+    tagline: "Registered Nurse · Midwife · Educator",
     bio: "A Registered Professional Nurse, Midwife, and Educator with over two decades of experience, including leadership roles at the South African Military Health Service. Elizabeth oversees all clinical operations and personally trains and supervises the caregiving team.",
     photo: {
       src: "/images/team/elizabeth-ratau.jpg",
@@ -260,6 +262,7 @@ export const teamMembers = [
   {
     name: "Feziwe Gumede",
     role: "Caregiver",
+    tagline: "Home Caregiver Training · Eldercare Home Services",
     bio: "A trained Home Caregiver (Eldercare Home Services) known for her reliability, empathy, and person-centred approach to preserving each client's dignity, comfort, and independence.",
     photo: {
       src: "/images/team/feziwe-gumede.jpg",
@@ -270,6 +273,7 @@ export const teamMembers = [
   {
     name: "Minenhle Makhathini",
     role: "Caregiver",
+    tagline: "Caregiving & HIV Counselling · 3+ Years Experience",
     bio: "Trained in Caregiving and HIV Counselling with over three years of experience, Minenhle brings a calm, empathetic approach that gives families confidence their loved ones are in capable hands.",
     photo: {
       src: "/images/team/minenhle-makhathini.jpg",

@@ -18,8 +18,8 @@ export default function HomePage() {
           TODO: replace with real client photos per PRD-001 once received. */}
       <section className="relative overflow-hidden">
         <HeroCarousel images={heroImages} />
-        <div className="relative mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 sm:py-36 sm:text-right">
-          <h1 className="text-4xl font-bold text-white sm:ml-auto sm:max-w-2xl sm:text-5xl">
+        <div className="relative mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 sm:py-40 sm:text-right">
+          <h1 className="text-5xl font-bold text-white sm:ml-auto sm:max-w-2xl sm:text-6xl">
             {siteConfig.tagline}
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90 sm:mr-0 sm:ml-auto">
@@ -68,9 +68,34 @@ export default function HomePage() {
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((point) => (
-              <div key={point.title} className="rounded-2xl border border-neutral bg-white p-6 text-center shadow-sm">
-                <h3 className="font-semibold text-primary">{point.title}</h3>
-                <p className="mt-2 text-sm text-foreground/80">{point.description}</p>
+              <div key={point.title} tabIndex={0} className="flip-card h-60 outline-none">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front flex flex-col items-center justify-center rounded-2xl border border-neutral bg-white p-6 text-center shadow-sm">
+                    <div
+                      className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary/15 text-secondary"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="h-6 w-6"
+                      >
+                        <path d="M20 6L9 17l-5-5" />
+                      </svg>
+                    </div>
+                    <h3 className="mt-4 font-semibold text-primary">{point.title}</h3>
+                    <p className="mt-2 text-xs text-foreground/50">Hover to read more</p>
+                  </div>
+                  <div className="flip-card-back flex flex-col items-center justify-center rounded-2xl bg-primary p-6 text-center shadow-sm">
+                    <h3 className="font-semibold text-white">{point.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-white/90">{point.description}</p>
+                  </div>
+                </div>
               </div>
             ))}
           </div>
@@ -106,7 +131,7 @@ export default function HomePage() {
       {/* Meet the team */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">Meet Our Team</h2>
-        <div className="mx-auto mt-10 grid max-w-2xl gap-6 sm:grid-cols-2">
+        <div className="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2">
           {teamMembers.map((member) => (
             <TeamMemberCard key={member.name} {...member} />
           ))}

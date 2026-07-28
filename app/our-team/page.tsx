@@ -17,7 +17,7 @@ export default function OurTeamPage() {
           Meet the team behind {siteConfig.name} — the people who&rsquo;ll be caring for you and
           your family.
         </p>
-        <div className="mx-auto mt-10 grid max-w-2xl gap-6 sm:grid-cols-2">
+        <div className="mt-10 grid gap-6 sm:grid-cols-2">
           {teamMembers.map((member) => (
             <TeamMemberCard key={member.name} {...member} />
           ))}

@@ -38,7 +38,7 @@ export function faqSchema(items: { question: string; answer: string }[]) {
 
 export const faqs = [
   {
-    question: "What areas does Mzansi Healthcare serve?",
+    question: `What areas does ${siteConfig.name} serve?`,
     answer: `We provide home and community healthcare services across ${siteConfig.serviceArea}.`,
   },
   {

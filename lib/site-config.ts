@@ -1,5 +1,5 @@
 export const siteConfig = {
-  name: "Mzansi Healthcare",
+  name: "Mzansi HealthCare",
   legalName: "Mzansi HealthCare (Pty) Ltd",
   domain: "www.mzansihealth.co.za",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mzansihealth.co.za",
@@ -241,20 +241,40 @@ export const teamMembers = [
     name: "Azande Nomnqa",
     role: "Managing Director & Founder",
     bio: "Founder and Managing Director, with a BCom in Accounting from the University of Johannesburg and a background in financial administration at Pretor Group. Azande founded Mzansi HealthCare to bring compassionate, professional, and dignified care to patients recovering at home.",
+    photo: {
+      src: "/images/team/azande-nomnqa.jpg",
+      alt: "Azande Nomnqa, Managing Director and Founder of Mzansi HealthCare",
+      objectPosition: "center 25%",
+    },
   },
   {
     name: "Elizabeth Ratau",
     role: "Clinical Manager",
     bio: "A Registered Professional Nurse, Midwife, and Educator with over two decades of experience, including leadership roles at the South African Military Health Service. Elizabeth oversees all clinical operations and personally trains and supervises the caregiving team.",
+    photo: {
+      src: "/images/team/elizabeth-ratau.jpg",
+      alt: "Elizabeth Ratau, Clinical Manager at Mzansi HealthCare",
+      objectPosition: "center 20%",
+    },
   },
   {
     name: "Feziwe Gumede",
     role: "Caregiver",
     bio: "A trained Home Caregiver (Eldercare Home Services) known for her reliability, empathy, and person-centred approach to preserving each client's dignity, comfort, and independence.",
+    photo: {
+      src: "/images/team/feziwe-gumede.jpg",
+      alt: "Feziwe Gumede, Caregiver at Mzansi HealthCare",
+      objectPosition: "center 30%",
+    },
   },
   {
     name: "Minenhle Makhathini",
     role: "Caregiver",
     bio: "Trained in Caregiving and HIV Counselling with over three years of experience, Minenhle brings a calm, empathetic approach that gives families confidence their loved ones are in capable hands.",
+    photo: {
+      src: "/images/team/minenhle-makhathini.jpg",
+      alt: "Minenhle Makhathini, Caregiver at Mzansi HealthCare",
+      objectPosition: "center 30%",
+    },
   },
 ] as const;

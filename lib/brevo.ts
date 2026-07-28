@@ -23,7 +23,7 @@ export async function sendContactEmail(submission: ContactSubmission) {
       "api-key": apiKey,
     },
     body: JSON.stringify({
-      sender: { name: "Mzansi Healthcare Website", email: siteConfig.emails.info },
+      sender: { name: `${siteConfig.name} Website`, email: siteConfig.emails.info },
       to: [{ email: siteConfig.emails.info }],
       subject: `New enquiry (${submission.service}) — ${submission.name}`,
       htmlContent: `
@@ -47,10 +47,10 @@ export async function sendContactEmail(submission: ContactSubmission) {
       "api-key": apiKey,
     },
     body: JSON.stringify({
-      sender: { name: "Mzansi Healthcare", email: siteConfig.emails.info },
+      sender: { name: siteConfig.name, email: siteConfig.emails.info },
       to: [{ email: submission.email, name: submission.name }],
-      subject: "We've received your enquiry — Mzansi Healthcare",
-      htmlContent: `<p>Hi ${submission.name},</p><p>Thanks for reaching out to Mzansi Healthcare. We've received your enquiry and will be in touch shortly.</p>`,
+      subject: `We've received your enquiry — ${siteConfig.name}`,
+      htmlContent: `<p>Hi ${submission.name},</p><p>Thanks for reaching out to ${siteConfig.name}. We've received your enquiry and will be in touch shortly.</p>`,
     }),
   });
 

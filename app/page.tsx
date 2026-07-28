@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import HeroCarousel from "@/components/shared/HeroCarousel";
 import ServiceCard from "@/components/shared/ServiceCard";
@@ -62,9 +63,24 @@ export default function HomePage() {
                     <h3 className="mt-4 font-semibold text-primary">{point.title}</h3>
                     <p className="mt-2 text-xs text-foreground/50">Hover to read more</p>
                   </div>
-                  <div className="flip-card-back flex flex-col items-center justify-center rounded-2xl bg-primary p-6 text-center shadow-sm">
-                    <h3 className="font-semibold text-white">{point.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-white/90">{point.description}</p>
+                  <div className="flip-card-back flex flex-col items-center justify-center overflow-hidden rounded-2xl p-6 text-center shadow-sm">
+                    <Image
+                      src={point.image.src}
+                      alt=""
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      style={{ objectPosition: point.image.objectPosition ?? "center" }}
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-primary-dark/75" aria-hidden="true" />
+                    <div
+                      className="absolute inset-0 bg-gradient-to-t from-primary-dark/95 via-primary-dark/60 to-transparent"
+                      aria-hidden="true"
+                    />
+                    <div className="relative">
+                      <h3 className="font-semibold text-white">{point.title}</h3>
+                      <p className="mt-2 text-sm leading-relaxed text-white/90">{point.description}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -100,12 +116,15 @@ export default function HomePage() {
       </section>
 
       {/* Meet the team */}
-      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-        <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">Meet Our Team</h2>
-        <div className="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2">
-          {teamMembers.map((member) => (
-            <TeamMemberCard key={member.name} {...member} />
-          ))}
+      <section className="relative overflow-hidden bg-neutral/40 py-16">
+        <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">Meet Our Team</h2>
+          <div className="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2">
+            {teamMembers.map((member) => (
+              <TeamMemberCard key={member.name} {...member} />
+            ))}
+          </div>
         </div>
       </section>
 

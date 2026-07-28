@@ -19,7 +19,13 @@ export default function PageBanner({ title, subtitle, image, tall = false }: Pag
           style={{ objectPosition: image.objectPosition ?? "center" }}
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-primary-dark/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/40 to-transparent" />
+        <div className="absolute inset-0 bg-dot-texture-light opacity-30" />
+        <div
+          className="absolute -top-24 -right-16 h-72 w-72 rounded-full bg-secondary/25 blur-3xl"
+          aria-hidden="true"
+        />
       </div>
       <div
         className={`relative mx-auto flex max-w-6xl flex-col justify-center px-4 text-center sm:px-6 ${

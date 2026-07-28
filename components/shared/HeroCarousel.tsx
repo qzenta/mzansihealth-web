@@ -61,7 +61,13 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
             }`}
           />
         ))}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+        <div className="absolute inset-0 bg-primary-dark/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/35 to-transparent" />
+        <div className="absolute inset-0 bg-dot-texture-light opacity-30" />
+        <div
+          className="absolute -top-32 -right-24 h-96 w-96 rounded-full bg-secondary/25 blur-3xl"
+          aria-hidden="true"
+        />
       </div>
 
       <div className="relative mx-auto max-w-6xl px-4 py-28 text-center sm:px-6 sm:py-40 sm:text-right">

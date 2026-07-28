@@ -209,37 +209,45 @@ export const values = [
   },
 ] as const;
 
-// Why Choose Us — the 6-point "Mzansi Difference" list from the Website Draft.
+// Why Choose Us — the 6-point "Mzansi Difference" list from the Website Draft. Each card flips
+// on hover to reveal a related photo behind the description (reuses already-sourced imagery —
+// these are small decorative card backs, not primary display images).
 export const whyChooseUs = [
   {
     title: "Compassion Comes First",
     description:
       "Every caregiver on our team serves with empathy, respect, and kindness. We treat every patient as family — because to us, care is deeply personal.",
+    image: { src: "/images/hero-caregiver.jpg", objectPosition: "center 30%" },
   },
   {
     title: "Professionally Supervised Clinical Care",
     description:
       "All our caregivers work under the clinical guidance of an experienced Registered Nurse and Clinical Manager, ensuring safe and high-quality medical support at home.",
+    image: { src: "/images/service-home-nursing.jpg", objectPosition: "center 20%" },
   },
   {
     title: "Personalised Care Plans",
     description:
       "We know every patient is unique. Our care plans are tailored to individual medical needs, recovery goals, and family preferences.",
+    image: { src: "/images/gallery/gallery-elderly-companionship.jpg", objectPosition: "center 20%" },
   },
   {
     title: "Reliable and Flexible Services",
     description:
       "From short hourly visits to 24-hour live-in care, we're available whenever and however you need us — always punctual, professional, and dependable.",
+    image: { src: "/images/gallery/gallery-live-in-care.jpg", objectPosition: "center" },
   },
   {
     title: "Transparent and Ethical Management",
     description:
       "Under the leadership of Managing Director Azande Nomnqa, we uphold honesty, accountability, and clear communication in everything we do.",
+    image: { src: "/images/gallery/gallery-hospital-transition.jpg", objectPosition: "center 30%" },
   },
   {
     title: "Restoring Dignity and Independence",
     description:
       "Our goal is not just to provide care, but to help every patient live with dignity, comfort, and confidence in their own home.",
+    image: { src: "/images/gallery/gallery-disability-care.jpg", objectPosition: "center" },
   },
 ] as const;
 

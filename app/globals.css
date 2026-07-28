@@ -101,3 +101,26 @@ body {
     animation: none;
   }
 }
+
+/* Subtle dot-grid textures, used to break up plain backgrounds without a photo.
+   -light = white dots for dark/photo overlays, -dark = brand-teal dots for light sections. */
+.bg-dot-texture-light {
+  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.55) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+.bg-dot-texture-dark {
+  background-image: radial-gradient(circle at 1px 1px, rgba(15, 92, 92, 0.18) 1px, transparent 0);
+  background-size: 28px 28px;
+}
+
+/* Giant faint brand-name watermark, used behind the footer content. */
+.footer-watermark {
+  font-size: clamp(4rem, 18vw, 11rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.04);
+  white-space: nowrap;
+  text-transform: uppercase;
+}

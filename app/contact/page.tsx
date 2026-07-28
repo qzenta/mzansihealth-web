@@ -17,59 +17,62 @@ export default function ContactPage() {
         subtitle="Reach out and our team will get back to you as soon as possible."
         image={pageBanners.contact}
       />
-      <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-        <div className="grid gap-12 md:grid-cols-2">
-          <ContactForm />
+      <section className="relative overflow-hidden py-16">
+        <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
+        <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
+          <div className="grid gap-12 md:grid-cols-2">
+            <ContactForm />
 
-          <div>
-            <h2 className="text-lg font-semibold text-primary">Get in Touch</h2>
-            <ul className="mt-4 space-y-3 text-foreground/80">
-              <li>
-                <span className="block text-sm font-medium text-foreground">Phone</span>
-                <a href={`tel:${siteConfig.phoneIntl}`} className="hover:text-primary">
-                  {siteConfig.phone}
-                </a>{" "}
-                /{" "}
-                <a href={`tel:${siteConfig.phoneSecondaryIntl}`} className="hover:text-primary">
-                  {siteConfig.phoneSecondary}
-                </a>
-              </li>
-              <li>
-                <span className="block text-sm font-medium text-foreground">WhatsApp</span>
-                <a href={siteConfig.whatsappLink} className="hover:text-primary">
-                  Message us on WhatsApp
-                </a>{" "}
-                /{" "}
-                <a href={siteConfig.whatsappSecondaryLink} className="hover:text-primary">
-                  alt line
-                </a>
-              </li>
-              <li>
-                <span className="block text-sm font-medium text-foreground">Email</span>
-                <a href={`mailto:${siteConfig.emails.info}`} className="hover:text-primary">
-                  {siteConfig.emails.info}
-                </a>
-              </li>
-              <li>
-                <span className="block text-sm font-medium text-foreground">Address</span>
-                {siteConfig.address}
-              </li>
-              <li>
-                <span className="block text-sm font-medium text-foreground">Service Area</span>
-                {siteConfig.serviceArea}
-              </li>
-            </ul>
+            <div>
+              <h2 className="text-lg font-semibold text-primary">Get in Touch</h2>
+              <ul className="mt-4 space-y-3 text-foreground/80">
+                <li>
+                  <span className="block text-sm font-medium text-foreground">Phone</span>
+                  <a href={`tel:${siteConfig.phoneIntl}`} className="hover:text-primary">
+                    {siteConfig.phone}
+                  </a>{" "}
+                  /{" "}
+                  <a href={`tel:${siteConfig.phoneSecondaryIntl}`} className="hover:text-primary">
+                    {siteConfig.phoneSecondary}
+                  </a>
+                </li>
+                <li>
+                  <span className="block text-sm font-medium text-foreground">WhatsApp</span>
+                  <a href={siteConfig.whatsappLink} className="hover:text-primary">
+                    Message us on WhatsApp
+                  </a>{" "}
+                  /{" "}
+                  <a href={siteConfig.whatsappSecondaryLink} className="hover:text-primary">
+                    alt line
+                  </a>
+                </li>
+                <li>
+                  <span className="block text-sm font-medium text-foreground">Email</span>
+                  <a href={`mailto:${siteConfig.emails.info}`} className="hover:text-primary">
+                    {siteConfig.emails.info}
+                  </a>
+                </li>
+                <li>
+                  <span className="block text-sm font-medium text-foreground">Address</span>
+                  {siteConfig.address}
+                </li>
+                <li>
+                  <span className="block text-sm font-medium text-foreground">Service Area</span>
+                  {siteConfig.serviceArea}
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <div className="mt-12">
-          <h2 className="text-lg font-semibold text-primary">Where We Serve</h2>
-          <p className="mt-2 max-w-2xl text-sm text-foreground/80">
-            You&rsquo;ll find us at {siteConfig.address}, and our caregivers come directly to you
-            across {siteConfig.serviceArea}.
-          </p>
-          <div className="mt-4">
-            <GoogleMap />
+          <div className="mt-12">
+            <h2 className="text-lg font-semibold text-primary">Where We Serve</h2>
+            <p className="mt-2 max-w-2xl text-sm text-foreground/80">
+              You&rsquo;ll find us at {siteConfig.address}, and our caregivers come directly to
+              you across {siteConfig.serviceArea}.
+            </p>
+            <div className="mt-4">
+              <GoogleMap />
+            </div>
           </div>
         </div>
       </section>

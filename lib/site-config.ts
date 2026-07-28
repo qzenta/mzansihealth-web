@@ -92,6 +92,16 @@ export const pageBanners = {
   },
 } as const;
 
+// Social links — PLACEHOLDER hrefs ("#") only. Daniel confirmed no real Mzansi social accounts
+// exist yet in any source doc; he will supply the real URLs later. Do not treat these as live —
+// swap each href once the real account URL is provided, and do not fabricate URLs in the meantime.
+export const socialLinks = [
+  { label: "Facebook", href: "#" },
+  { label: "Instagram", href: "#" },
+  { label: "LinkedIn", href: "#" },
+  { label: "Twitter / X", href: "#" },
+] as const;
+
 // Trust badges — generic, descriptive, no third-party names/logos. Do NOT add claim-based
 // badges (e.g. "Medical Aid Accepted", "NHI Registered") without Daniel's confirmation that
 // they are actually true — see CC-Handoff-Mobile-Nav-Carousel-Banners-Badges.md §4.

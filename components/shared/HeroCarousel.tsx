@@ -55,6 +55,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
             alt={slide.alt}
             fill
             priority={i === 0}
+            sizes="100vw"
             style={{ objectPosition: slide.objectPosition ?? "center" }}
             className={`object-cover transition-opacity duration-1000 ease-in-out ${
               i === index ? "opacity-100" : "opacity-0"
@@ -98,7 +99,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
           </a>
           <a
             href={siteConfig.whatsappLink}
-            className="rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:opacity-90"
+            className="rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-primary-dark transition-transform hover:-translate-y-0.5 hover:opacity-90"
           >
             WhatsApp
           </a>

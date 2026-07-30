@@ -61,7 +61,7 @@ export default function HomePage() {
                       </svg>
                     </div>
                     <h3 className="mt-4 font-semibold text-primary">{point.title}</h3>
-                    <p className="mt-2 text-xs text-foreground/50">Hover to read more</p>
+                    <p className="mt-2 text-xs text-foreground/70">Hover to read more</p>
                   </div>
                   <div className="flip-card-back flex flex-col items-center justify-center overflow-hidden rounded-2xl p-6 text-center shadow-sm">
                     <Image

@@ -1,6 +1,6 @@
-# Mzansi Healthcare — Website
+# Mzansi HealthCare — Website
 
-Marketing website for Mzansi Healthcare (www.mzansihealth.co.za), built against PRD-001.
+Marketing website for Mzansi HealthCare (www.mzansihealth.co.za), built against PRD-001.
 
 ## Stack
 
@@ -20,13 +20,18 @@ Open [http://localhost:3000](http://localhost:3000).
 
 See `.env.example`. `BREVO_API_KEY` is required for the contact form to send email — without it, `POST /api/contact` returns a 502.
 
+## Site status
+
+**The live site is currently paused behind a holding page** (`middleware.ts`, added 13 Jul 2026 per Lizzy's request) — every route except `/api`, `/_next`, `/images`, `/favicon.ico`, `robots.txt`, and `sitemap.xml` returns a 503 holding page with `noindex` instead of the real site. DNS, email routing, Brevo, and the contact form all keep working underneath. To restore the full site once Daniel/Lizzy sign off, delete `middleware.ts` and redeploy.
+
 ## Content status
 
-Real logo, service copy, About Us narrative, team photos/bios, and final contact-hours confirmation are **pending client content** (requested 10 July 2026). Until then:
+Real address, contact details, About Us narrative, and team names/roles/bios/photos are all in from the client's Website Draft. Still pending real client material:
 
-- Team section uses initial-avatar placeholders (sanctioned by PRD-001 §6)
-- Services/About copy is placeholder text, structured to match the final content shape
-- Nav/footer use a text wordmark instead of a logo image
+- Hero, service-card, and Gallery photos are free-license stock (Pexels), marked with `TODO` comments in `lib/site-config.ts` — swap for real client/patient photos once received
+- Privacy Policy, Terms, and POPIA pages carry placeholder legal text pending legal review
+- Social links are placeholder (`#`) hrefs — Daniel confirmed no real Mzansi social accounts exist yet
+- Nav/footer use a text wordmark instead of a logo image (no logo supplied)
 
 Swap in real content via `lib/site-config.ts` (site copy, services, team members) once it lands — no structural changes needed.
 

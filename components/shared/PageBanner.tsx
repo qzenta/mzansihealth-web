@@ -16,6 +16,7 @@ export default function PageBanner({ title, subtitle, image, tall = false }: Pag
           alt={image.alt}
           fill
           priority
+          sizes="100vw"
           style={{ objectPosition: image.objectPosition ?? "center" }}
           className="object-cover"
         />

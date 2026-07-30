@@ -72,6 +72,7 @@ export function middleware(request: NextRequest) {
       "Retry-After": "86400",
       "Cache-Control": "no-store",
       "X-Frame-Options": "SAMEORIGIN",
+      "X-Content-Type-Options": "nosniff",
       "Referrer-Policy": "strict-origin-when-cross-origin",
       "Content-Security-Policy": "default-src 'self'; style-src 'unsafe-inline';",
     },

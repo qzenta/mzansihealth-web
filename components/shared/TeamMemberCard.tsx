@@ -49,14 +49,14 @@ export default function TeamMemberCard({ name, role, bio, tagline, photo }: Team
             <h3 className="text-lg font-bold leading-tight text-white">{name}</h3>
           </div>
           <div className="mt-2">
-            <span className="inline-block rounded-full bg-secondary px-3 py-1 text-xs font-bold uppercase tracking-wide text-white shadow-md">
+            <span className="inline-block rounded-full bg-secondary px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary-dark shadow-md">
               {role}
             </span>
           </div>
         </div>
       </div>
       <div className="flex flex-1 flex-col p-5">
-        {tagline && <p className="mb-3 text-xs text-foreground/50">{tagline}</p>}
+        {tagline && <p className="mb-3 text-xs text-foreground/70">{tagline}</p>}
         <p className="flex-1 text-sm leading-relaxed text-foreground/80">{bio}</p>
       </div>
     </div>

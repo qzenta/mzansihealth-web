@@ -44,7 +44,7 @@ export default function Nav() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="text-white/70 transition hover:text-white"
+                className="-m-1 p-1 text-white/70 transition hover:text-white"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-4 w-4">
                   <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
@@ -57,7 +57,7 @@ export default function Nav() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="text-white/70 transition hover:text-white"
+                className="-m-1 p-1 text-white/70 transition hover:text-white"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="h-4 w-4">
                   <path d={socialIconPaths[social.label]} />

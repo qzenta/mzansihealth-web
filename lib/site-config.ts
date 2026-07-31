@@ -101,6 +101,16 @@ export const pageBanners = {
   },
 } as const;
 
+// Hero trust-stat row — icon + bold label + short descriptor, shown inside the hero card itself
+// (per whauctions.com/buysellassets.php reference, 13 Jul 2026). Icon keys map to HeroCarousel's
+// internal icon set.
+export const heroStats = [
+  { icon: "users", title: "Qualified Caregivers", description: "Trained & Experienced" },
+  { icon: "map-pin", title: "Home Visits", description: "Komani & Surrounds" },
+  { icon: "shield-check", title: "Trusted Care", description: "Compassionate & Reliable" },
+  { icon: "clock", title: "Flexible Scheduling", description: "Hourly to 24-Hour" },
+] as const;
+
 // Social links — PLACEHOLDER hrefs ("#") only. Daniel confirmed no real Mzansi social accounts
 // exist yet in any source doc; he will supply the real URLs later. Do not treat these as live —
 // swap each href once the real account URL is provided, and do not fabricate URLs in the meantime.

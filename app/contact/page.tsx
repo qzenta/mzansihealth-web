@@ -17,13 +17,15 @@ export default function ContactPage() {
         subtitle="Reach out and our team will get back to you as soon as possible."
         image={pageBanners.contact}
       />
-      <section className="relative overflow-hidden py-16">
+      <section className="relative overflow-hidden bg-neutral/40 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
           <div className="grid gap-12 md:grid-cols-2">
-            <ContactForm />
+            <div className="rounded-2xl border border-neutral bg-white p-6 shadow-sm">
+              <ContactForm />
+            </div>
 
-            <div>
+            <div className="rounded-2xl border border-neutral bg-secondary/10 p-6 shadow-sm">
               <h2 className="text-lg font-semibold text-primary">Get in Touch</h2>
               <ul className="mt-4 space-y-3 text-foreground/80">
                 <li>

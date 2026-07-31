@@ -102,7 +102,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
           />
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 sm:py-20 sm:text-right">
+        <div className="relative mx-auto max-w-6xl px-4 py-8 text-center sm:px-6 sm:py-8 sm:text-right">
           <div className="relative">
             {slides.map((slide, i) => (
               <div
@@ -112,7 +112,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
                 }`}
                 aria-hidden={i !== index}
               >
-                <h1 className="animate-fade-in-up text-[26px] font-bold leading-tight text-white sm:ml-auto sm:max-w-3xl sm:text-5xl sm:leading-normal md:text-6xl">
+                <h1 className="animate-fade-in-up text-[23px] font-bold leading-tight text-white sm:ml-auto sm:max-w-3xl sm:text-5xl sm:leading-normal md:text-6xl">
                   {slide.headline}
                 </h1>
                 <p className="animate-fade-in-up mx-auto mt-4 max-w-2xl text-base text-white/90 sm:mr-0 sm:ml-auto sm:text-lg [animation-delay:150ms]">
@@ -121,7 +121,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
               </div>
             ))}
           </div>
-          <div className="animate-fade-in-up mt-8 flex flex-wrap justify-center gap-4 sm:justify-end [animation-delay:300ms]">
+          <div className="animate-fade-in-up mt-5 flex flex-wrap justify-center gap-4 sm:justify-end [animation-delay:300ms]">
             <a
               href={`tel:${siteConfig.phoneIntl}`}
               className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-primary-dark"
@@ -142,7 +142,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
             </Link>
           </div>
 
-          <div className="animate-fade-in-up mt-10 flex flex-wrap justify-center gap-x-6 gap-y-6 border-t border-white/15 pt-8 sm:justify-end [animation-delay:450ms]">
+          <div className="animate-fade-in-up mt-4 flex flex-wrap justify-center gap-x-6 gap-y-4 border-t border-white/15 pt-4 sm:justify-end [animation-delay:450ms]">
             {heroStats.map((stat, i) => (
               <div
                 key={stat.title}
@@ -150,7 +150,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
                   i > 0 ? "sm:border-l sm:border-white/20" : ""
                 }`}
               >
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-secondary text-primary-dark">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-secondary text-primary-dark">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"

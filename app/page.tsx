@@ -25,7 +25,7 @@ export default function HomePage() {
       <TrustBadgeMarquee badges={trustBadges} />
 
       {/* Trust points */}
-      <section className="relative overflow-hidden py-16">
+      <section className="relative overflow-hidden bg-neutral/40 py-16">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -42,7 +42,7 @@ export default function HomePage() {
             {whyChooseUs.map((point) => (
               <div key={point.title} tabIndex={0} className="flip-card h-60 outline-none">
                 <div className="flip-card-inner">
-                  <div className="flip-card-front flex flex-col items-center justify-center rounded-2xl border border-neutral bg-white p-6 text-center shadow-sm">
+                  <div className="flip-card-front flex flex-col items-center justify-center rounded-2xl border border-neutral bg-secondary/10 p-6 text-center shadow-sm">
                     <div
                       className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary/15 text-secondary"
                       aria-hidden="true"

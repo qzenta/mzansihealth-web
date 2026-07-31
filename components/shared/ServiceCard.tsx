@@ -9,7 +9,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ name, description, image, objectPosition }: ServiceCardProps) {
   return (
-    <div className="group overflow-hidden rounded-2xl border border-neutral bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div className="group overflow-hidden rounded-2xl border border-neutral bg-secondary/10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       <div className="relative aspect-video w-full overflow-hidden">
         <Image
           src={image}

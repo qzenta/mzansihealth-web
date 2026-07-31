@@ -10,7 +10,7 @@ interface TeamMemberCardProps {
 
 export default function TeamMemberCard({ name, role, bio, tagline, photo }: TeamMemberCardProps) {
   return (
-    <div className="flex flex-col overflow-hidden rounded-2xl border border-neutral bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div className="flex flex-col overflow-hidden rounded-2xl border border-neutral bg-secondary/10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       <div className={`relative h-72 w-full overflow-hidden ${photo ? "" : "bg-primary"}`}>
         {photo ? (
           <>

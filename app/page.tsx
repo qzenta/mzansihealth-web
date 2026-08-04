@@ -25,7 +25,7 @@ export default function HomePage() {
       <TrustBadgeMarquee badges={trustBadges} />
 
       {/* Trust points */}
-      <section className="relative overflow-hidden bg-neutral/40 py-16">
+      <section className="relative overflow-hidden bg-secondary/15 py-16">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -42,26 +42,41 @@ export default function HomePage() {
             {whyChooseUs.map((point) => (
               <div key={point.title} tabIndex={0} className="flip-card h-60 outline-none">
                 <div className="flip-card-inner">
-                  <div className="flip-card-front flex flex-col items-center justify-center rounded-2xl border border-neutral bg-secondary/10 p-6 text-center shadow-sm">
+                  <div className="flip-card-front flex flex-col items-center justify-center overflow-hidden rounded-2xl p-6 text-center shadow-sm">
+                    <Image
+                      src={point.image.src}
+                      alt=""
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      style={{ objectPosition: point.image.objectPosition ?? "center" }}
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-primary-dark/70" aria-hidden="true" />
                     <div
-                      className="flex h-12 w-12 items-center justify-center rounded-full bg-secondary/15 text-secondary"
+                      className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/50 to-primary-dark/30"
                       aria-hidden="true"
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth={2}
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="h-6 w-6"
+                    />
+                    <div className="relative flex flex-col items-center">
+                      <div
+                        className="flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white ring-1 ring-white/40"
+                        aria-hidden="true"
                       >
-                        <path d="M20 6L9 17l-5-5" />
-                      </svg>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth={2}
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="h-6 w-6"
+                        >
+                          <path d="M20 6L9 17l-5-5" />
+                        </svg>
+                      </div>
+                      <h3 className="mt-4 font-semibold text-white">{point.title}</h3>
+                      <p className="mt-2 text-xs text-white/70">Tap or hover to read more</p>
                     </div>
-                    <h3 className="mt-4 font-semibold text-primary">{point.title}</h3>
-                    <p className="mt-2 text-xs text-foreground/70">Hover to read more</p>
                   </div>
                   <div className="flip-card-back flex flex-col items-center justify-center overflow-hidden rounded-2xl p-6 text-center shadow-sm">
                     <Image
@@ -90,7 +105,7 @@ export default function HomePage() {
       </section>
 
       {/* Services preview */}
-      <section className="bg-neutral/40 py-16">
+      <section className="bg-secondary/15 py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">Our Services</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -103,20 +118,62 @@ export default function HomePage() {
                 objectPosition={service.objectPosition}
               />
             ))}
-          </div>
-          <div className="mt-10 text-center">
+
+            {/* Non-service CTA tiles — complete the 3x3 grid without adding unverified service
+                claims (only the 7 services above are sourced from the client's Website Draft). */}
             <Link
               href="/services"
-              className="rounded-full border border-primary px-6 py-3 text-sm font-semibold text-primary hover:bg-primary hover:text-white"
+              className="group flex flex-col justify-center overflow-hidden rounded-2xl bg-primary p-6 text-center text-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-primary-dark hover:shadow-lg"
             >
-              View All Services
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mx-auto h-8 w-8"
+                aria-hidden="true"
+              >
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+              </svg>
+              <h3 className="mt-4 text-lg font-semibold">See Everything We Offer</h3>
+              <p className="mt-2 text-sm text-white/80">
+                Browse the full list of services in detail on our Services page.
+              </p>
+            </Link>
+            <Link
+              href="/contact"
+              className="group flex flex-col justify-center overflow-hidden rounded-2xl border border-secondary/30 bg-white p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth={2}
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="mx-auto h-8 w-8 text-secondary"
+                aria-hidden="true"
+              >
+                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+              </svg>
+              <h3 className="mt-4 text-lg font-semibold text-primary">Not Sure What You Need?</h3>
+              <p className="mt-2 text-sm text-foreground/70">
+                Talk to our team and we&rsquo;ll help you find the right kind of care.
+              </p>
             </Link>
           </div>
         </div>
       </section>
 
       {/* Meet the team */}
-      <section className="relative overflow-hidden bg-neutral/40 py-16">
+      <section className="relative overflow-hidden bg-secondary/15 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">Meet Our Team</h2>

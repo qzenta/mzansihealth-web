@@ -56,9 +56,9 @@ export const heroImages = [
     description: "Qualified caregivers providing medication supervision, vital checks, and clinical support at home.",
   },
   {
-    src: "/images/hero-home-visit.jpg",
-    alt: "A healthcare worker checking a patient's vital signs during a home visit",
-    objectPosition: "center 20%",
+    src: "/images/hero-companionship.jpg",
+    alt: "A caregiver and an elderly patient smiling together at home",
+    objectPosition: "center 25%",
     headline: "Care That Meets You, Wherever You Are",
     description: "From post-hospital recovery to 24-hour live-in support, our team is with you every step of the way.",
   },

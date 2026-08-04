@@ -22,14 +22,14 @@ See `.env.example`. `BREVO_API_KEY` is required for the contact form to send ema
 
 ## Site status
 
-**The live site is currently paused behind a holding page** (`middleware.ts`, added 13 Jul 2026 per Lizzy's request) — every route except `/api`, `/_next`, `/images`, `/favicon.ico`, `robots.txt`, and `sitemap.xml` returns a 503 holding page with `noindex` instead of the real site. DNS, email routing, Brevo, and the contact form all keep working underneath. To restore the full site once Daniel/Lizzy sign off, delete `middleware.ts` and redeploy.
+**Live** — the holding-page pause (`middleware.ts`, added 13 Jul 2026 per Lizzy's request) was lifted 4 Aug 2026 for go-live. DNS, email routing, Brevo, and the contact form were unaffected throughout.
 
 ## Content status
 
 Real address, contact details, About Us narrative, and team names/roles/bios/photos are all in from the client's Website Draft. Still pending real client material:
 
 - Hero, service-card, and Gallery photos are free-license stock (Pexels), marked with `TODO` comments in `lib/site-config.ts` — swap for real client/patient photos once received
-- Privacy Policy, Terms, and POPIA pages carry placeholder legal text pending legal review
+- Privacy Policy, Terms, POPIA, and Consent pages carry template-based generic legal text (SA SMB/healthcare pattern) — not a final lawyer-reviewed policy
 - Social links are placeholder (`#`) hrefs — Daniel confirmed no real Mzansi social accounts exist yet
 - Nav/footer use a text wordmark instead of a logo image (no logo supplied)
 

@@ -13,6 +13,7 @@ const legalLinks = [
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms" },
   { href: "/popia", label: "POPIA" },
+  { href: "/consent", label: "Consent" },
   { href: "/faq", label: "FAQ" },
 ];
 

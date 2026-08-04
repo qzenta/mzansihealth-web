@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy-policy",
     "/terms",
     "/popia",
+    "/consent",
   ];
 
   return routes.map((route) => ({

@@ -44,8 +44,9 @@ export default function TermsPage() {
           <h2 className="text-xl font-semibold text-primary">Intellectual property</h2>
           <p className="mt-2">
             All content on this website, including text, images, and logos, is the property of{" "}
-            {siteConfig.name} or its licensors, unless otherwise stated, and may not be
-            reproduced without our prior written permission.
+            {siteConfig.name}{" "}
+            or its licensors, unless otherwise stated, and may not be reproduced without our
+            prior written permission.
           </p>
         </div>
 

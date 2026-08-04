@@ -17,8 +17,9 @@ export default function PrivacyPolicyPage() {
             launch. Not a final lawyer-reviewed policy; review before major changes to data
             practices. */}
         <p>
-          {siteConfig.name} (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) respects your
-          privacy and is committed to protecting the personal information you share with us. This
+          {siteConfig.name}{" "}
+          (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;) respects your privacy and is
+          committed to protecting the personal information you share with us. This
           Privacy Policy explains what information we collect through this website, why we
           collect it, how we use and store it, and the choices you have.
         </p>

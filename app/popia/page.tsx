@@ -16,8 +16,9 @@ export default function PopiaPage() {
         {/* Template-based generic POPIA notice — nothing legally blank at launch. Not a final
             lawyer-reviewed policy. */}
         <p>
-          {siteConfig.name} is committed to protecting your personal information in line with
-          South Africa&rsquo;s Protection of Personal Information Act, 4 of 2013 (POPIA). This
+          {siteConfig.name}{" "}
+          is committed to protecting your personal information in line with South
+          Africa&rsquo;s Protection of Personal Information Act, 4 of 2013 (POPIA). This
           notice explains our role as the responsible party and how we process personal
           information collected through this website.
         </p>
@@ -25,8 +26,9 @@ export default function PopiaPage() {
         <div>
           <h2 className="text-xl font-semibold text-primary">Responsible party</h2>
           <p className="mt-2">
-            {siteConfig.legalName} is the responsible party for personal information collected
-            via this website. Our Information Officer can be reached at{" "}
+            {siteConfig.legalName}{" "}
+            is the responsible party for personal information collected via this website. Our
+            Information Officer can be reached at{" "}
             <a href={`mailto:${siteConfig.emails.info}`} className="text-primary hover:underline">
               {siteConfig.emails.info}
             </a>

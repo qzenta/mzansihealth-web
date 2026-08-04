@@ -16,8 +16,9 @@ export default function ConsentPage() {
         {/* Template-based generic consent notice — nothing legally blank at launch. Not a final
             lawyer-reviewed policy. */}
         <p>
-          This page explains how {siteConfig.name} obtains your consent before collecting or
-          using your personal information through this website, in line with our{" "}
+          This page explains how {siteConfig.name}{" "}
+          obtains your consent before collecting or using your personal information through this
+          website, in line with our{" "}
           <Link href="/privacy-policy" className="text-primary hover:underline">
             Privacy Policy
           </Link>{" "}
@@ -32,10 +33,10 @@ export default function ConsentPage() {
           <h2 className="text-xl font-semibold text-primary">Consent to being contacted</h2>
           <p className="mt-2">
             When you submit our contact form with your name, phone number, email address, service
-            of interest, and message, you are consenting to {siteConfig.name} contacting you by
-            phone, WhatsApp, or email to respond to your enquiry and discuss the care services you
-            are interested in. We only use these details for this purpose, and we do not add you
-            to any marketing list without asking you separately first.
+            of interest, and message, you are consenting to {siteConfig.name}{" "}
+            contacting you by phone, WhatsApp, or email to respond to your enquiry and discuss the
+            care services you are interested in. We only use these details for this purpose, and
+            we do not add you to any marketing list without asking you separately first.
           </p>
         </div>
 

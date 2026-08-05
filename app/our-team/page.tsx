@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import PageBanner from "@/components/shared/PageBanner";
 import TeamMemberCard from "@/components/shared/TeamMemberCard";
-import { pageBanners, siteConfig, teamMembers } from "@/lib/site-config";
+import { ourCaregivers, pageBanners, siteConfig, teamMembers } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -23,6 +23,10 @@ export default function OurTeamPage() {
             {teamMembers.map((member) => (
               <TeamMemberCard key={member.name} {...member} />
             ))}
+          </div>
+          <div className="mt-8 rounded-2xl border border-secondary/30 bg-white p-6 text-center shadow-sm">
+            <h2 className="text-lg font-semibold text-primary">{ourCaregivers.title}</h2>
+            <p className="mt-2 text-sm leading-relaxed text-foreground/80">{ourCaregivers.description}</p>
           </div>
         </div>
       </section>

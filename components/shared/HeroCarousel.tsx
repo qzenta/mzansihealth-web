@@ -134,6 +134,13 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
             >
               WhatsApp
             </a>
+            <a
+              href={siteConfig.whatsappSecondaryLink}
+              aria-label={`WhatsApp alternate number, ${siteConfig.whatsappSecondaryNumber}`}
+              className="rounded-full border border-secondary px-4 py-3 text-xs font-semibold text-secondary transition-transform hover:-translate-y-0.5 hover:bg-secondary hover:text-primary-dark"
+            >
+              WhatsApp (alt)
+            </a>
             <Link
               href="/contact"
               className="rounded-full border border-white px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-white hover:text-primary"

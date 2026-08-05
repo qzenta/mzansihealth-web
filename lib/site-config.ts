@@ -4,7 +4,8 @@ export const siteConfig = {
   domain: "www.mzansihealth.co.za",
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mzansihealth.co.za",
   tagline: "Compassionate Home Healthcare You Can Trust",
-  description: "Professional home and community care for individuals and families across Komani.",
+  description:
+    "Professional home and community care for individuals and families throughout South Africa — based in Queenstown, Eastern Cape.",
   // Primary line, used for the main Call/WhatsApp CTAs everywhere.
   phone: "0756211562",
   phoneIntl: "+27756211562",
@@ -30,7 +31,7 @@ export const siteConfig = {
     postalCode: "5319",
     addressRegion: "Eastern Cape",
   },
-  serviceArea: "Komani and surrounding areas, Eastern Cape",
+  serviceArea: "South Africa",
   mapQuery: "15 Red Duiker Road, Madeira Park, Queenstown, 5319, Eastern Cape, South Africa",
 } as const;
 
@@ -46,7 +47,8 @@ export const heroImages = [
     alt: "A caregiver holding the hand of an elderly patient",
     objectPosition: "center 30%",
     headline: "Compassionate Home Healthcare You Can Trust",
-    description: "Professional home and community care for individuals and families across Komani.",
+    description:
+    "Professional home and community care for individuals and families throughout South Africa — based in Queenstown, Eastern Cape.",
   },
   {
     src: "/images/service-home-nursing.jpg",
@@ -106,7 +108,7 @@ export const pageBanners = {
 // internal icon set.
 export const heroStats = [
   { icon: "users", title: "Qualified Caregivers", description: "Trained & Experienced" },
-  { icon: "map-pin", title: "Home Visits", description: "Komani & Surrounds" },
+  { icon: "map-pin", title: "Home Visits", description: "Nationwide" },
   { icon: "shield-check", title: "Trusted Care", description: "Compassionate & Reliable" },
   { icon: "clock", title: "Flexible Scheduling", description: "Hourly to 24-Hour" },
 ] as const;
@@ -128,7 +130,7 @@ export const trustBadges = [
   { label: "Home Visits" },
   { label: "Flexible Scheduling" },
   { label: "Qualified Caregivers" },
-  { label: "Komani & Surrounds" },
+  { label: "Nationwide Service" },
 ] as const;
 
 // Service card photos are free-license Pexels stock (sample imagery), not real client/caregiver
@@ -309,8 +311,10 @@ export const galleryItems = [
   },
 ] as const;
 
-// Real team profiles from the Website Draft (13 Jul 2026), with real photos (added per Daniel,
-// matched to names via filename). Falls back to the generic icon avatar if photo is omitted.
+// Named/photographed team profiles — permanent staff only (per client feedback, 5 Aug 2026).
+// Individual caregivers (previously Feziwe Gumede, Minenhle Makhathini) are intentionally NOT
+// listed here: caregiver assignments change per contract, so they're represented collectively via
+// `ourCaregivers` below instead of by name/photo.
 export const teamMembers = [
   {
     name: "Azande Nomnqa",
@@ -334,26 +338,13 @@ export const teamMembers = [
       objectPosition: "center 20%",
     },
   },
-  {
-    name: "Feziwe Gumede",
-    role: "Caregiver",
-    tagline: "Home Caregiver Training · Eldercare Home Services",
-    bio: "A trained Home Caregiver (Eldercare Home Services) known for her reliability, empathy, and person-centred approach to preserving each client's dignity, comfort, and independence.",
-    photo: {
-      src: "/images/team/feziwe-gumede.jpg",
-      alt: "Feziwe Gumede, Caregiver at Mzansi HealthCare",
-      objectPosition: "center 30%",
-    },
-  },
-  {
-    name: "Minenhle Makhathini",
-    role: "Caregiver",
-    tagline: "Caregiving & HIV Counselling · 3+ Years Experience",
-    bio: "Trained in Caregiving and HIV Counselling with over three years of experience, Minenhle brings a calm, empathetic approach that gives families confidence their loved ones are in capable hands.",
-    photo: {
-      src: "/images/team/minenhle-makhathini.jpg",
-      alt: "Minenhle Makhathini, Caregiver at Mzansi HealthCare",
-      objectPosition: "center 30%",
-    },
-  },
 ] as const;
+
+// Generic caregiver description block — replaces individual caregiver profiles (per client
+// feedback, 5 Aug 2026): assignments change per contract, so caregivers are represented
+// collectively rather than by name/photo. Only Azande and Elizabeth remain named/photographed.
+export const ourCaregivers = {
+  title: "Our Caregivers",
+  description:
+    "Beyond our leadership team, Mzansi HealthCare draws on a pool of qualified, experienced caregivers — each carefully selected, trained, and matched to every client's specific needs. Caregiver assignments are made per contract to best suit your care requirements, and every caregiver works under the direct clinical supervision of our Registered Nurse and Clinical Manager, Elizabeth Ratau.",
+} as const;

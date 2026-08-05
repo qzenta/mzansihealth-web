@@ -32,9 +32,16 @@ export default function Nav() {
           <a href={`mailto:${siteConfig.emails.info}`} className="hover:underline">
             {siteConfig.emails.info}
           </a>
-          <a href={`tel:${siteConfig.phoneIntl}`} className="hover:underline">
-            {siteConfig.phone}
-          </a>
+          <span className="flex items-center gap-1">
+            <span className="hidden sm:inline text-white/70">Call:</span>
+            <a href={`tel:${siteConfig.phoneIntl}`} className="hover:underline">
+              {siteConfig.phone}
+            </a>
+            {" / "}
+            <a href={`tel:${siteConfig.phoneSecondaryIntl}`} className="hover:underline">
+              {siteConfig.phoneSecondary}
+            </a>
+          </span>
           <span className="hidden md:inline">{siteConfig.address}</span>
         </div>
         <div className="hidden items-center gap-3 sm:flex">

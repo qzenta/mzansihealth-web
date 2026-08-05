@@ -4,7 +4,7 @@ import HeroCarousel from "@/components/shared/HeroCarousel";
 import ServiceCard from "@/components/shared/ServiceCard";
 import TeamMemberCard from "@/components/shared/TeamMemberCard";
 import TrustBadgeMarquee from "@/components/shared/TrustBadgeMarquee";
-import { heroImages, services, siteConfig, teamMembers, trustBadges, whyChooseUs } from "@/lib/site-config";
+import { heroImages, ourCaregivers, services, siteConfig, teamMembers, trustBadges, whyChooseUs } from "@/lib/site-config";
 import { faqSchema, faqs } from "@/lib/schema";
 
 export default function HomePage() {
@@ -181,6 +181,10 @@ export default function HomePage() {
             {teamMembers.map((member) => (
               <TeamMemberCard key={member.name} {...member} />
             ))}
+          </div>
+          <div className="mx-auto mt-8 max-w-4xl rounded-2xl border border-secondary/30 bg-white p-6 text-center shadow-sm">
+            <h3 className="text-lg font-semibold text-primary">{ourCaregivers.title}</h3>
+            <p className="mt-2 text-sm leading-relaxed text-foreground/80">{ourCaregivers.description}</p>
           </div>
         </div>
       </section>

@@ -22,7 +22,7 @@ export default function PageBanner({ title, subtitle, image, tall = false }: Pag
         />
         <div className="absolute inset-0 bg-primary-dark/60" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/40 to-transparent" />
-        <div className="absolute inset-0 bg-dot-texture-light opacity-30" />
+        <div className="absolute inset-0 bg-dot-texture-light opacity-[0.06]" />
         <div
           className="absolute -top-24 -right-16 h-72 w-72 rounded-full bg-secondary/25 blur-3xl"
           aria-hidden="true"
@@ -33,7 +33,7 @@ export default function PageBanner({ title, subtitle, image, tall = false }: Pag
           tall ? "min-h-[420px] py-16 sm:min-h-[480px]" : "min-h-[220px] py-16 sm:py-20"
         }`}
       >
-        <h1 className="text-3xl font-bold text-white sm:text-4xl">{title}</h1>
+        <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">{title}</h1>
         {subtitle && <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">{subtitle}</p>}
       </div>
     </section>

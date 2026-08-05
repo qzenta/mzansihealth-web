@@ -35,7 +35,7 @@ export default function HomePage() {
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">
+          <h2 className="text-center text-2xl font-extrabold tracking-tight text-primary sm:text-3xl">
             Why Choose {siteConfig.name} — The Mzansi Difference
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -107,7 +107,7 @@ export default function HomePage() {
       {/* Services preview */}
       <section className="bg-secondary/25 py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">Our Services</h2>
+          <h2 className="text-center text-2xl font-extrabold tracking-tight text-primary sm:text-3xl">Our Services</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <ServiceCard
@@ -174,9 +174,9 @@ export default function HomePage() {
 
       {/* Meet the team */}
       <section className="relative overflow-hidden bg-secondary/25 py-16">
-        <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
+        <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">Meet Our Team</h2>
+          <h2 className="text-center text-2xl font-extrabold tracking-tight text-primary sm:text-3xl">Meet Our Team</h2>
           <div className="mx-auto mt-10 grid max-w-4xl gap-6 sm:grid-cols-2">
             {teamMembers.map((member) => (
               <TeamMemberCard key={member.name} {...member} />
@@ -192,7 +192,7 @@ export default function HomePage() {
       {/* CTA */}
       <section className="bg-primary py-16 text-center text-white">
         <div className="mx-auto max-w-2xl px-4 sm:px-6">
-          <h2 className="text-2xl font-bold sm:text-3xl">Need Professional Home Care?</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight sm:text-3xl">Need Professional Home Care?</h2>
           <p className="mt-3 text-white/90">
             Reach out today and let our team design a care plan for you or your loved one.
           </p>

@@ -12,7 +12,7 @@ export default function AboutPage() {
     <>
       <PageBanner title={`About ${siteConfig.name}`} image={pageBanners.about} tall />
       <section className="relative overflow-hidden bg-secondary/25 py-16">
-        <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
+        <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6">
           <div className="space-y-4 text-foreground/80">
             {about.paragraphs.map((paragraph, i) => (
@@ -43,7 +43,7 @@ export default function AboutPage() {
           aria-hidden="true"
         />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6">
-          <h2 className="text-2xl font-bold text-primary">Our Values</h2>
+          <h2 className="text-2xl font-extrabold tracking-tight text-primary">Our Values</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             {values.map((value) => (
               <div

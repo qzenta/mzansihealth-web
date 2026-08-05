@@ -69,7 +69,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
   }, [isPaused, slides.length, intervalMs]);
 
   return (
-    <div className="mx-3 mt-3 sm:mx-6 sm:mt-6">
+    <div className="mx-3 mt-3 mb-3 sm:mx-6 sm:mt-6 sm:mb-6">
       <div
         className="relative min-h-[520px] overflow-hidden rounded-3xl shadow-xl sm:min-h-[560px] sm:rounded-[2rem]"
         onMouseEnter={() => setIsPaused(true)}
@@ -95,7 +95,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
           <div className="absolute inset-0 bg-primary-dark/55" />
           <div className="absolute inset-0 bg-gradient-to-l from-primary-dark/90 via-primary-dark/30 to-transparent" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/80 via-transparent to-transparent" />
-          <div className="absolute inset-0 bg-dot-texture-light opacity-30" />
+          <div className="absolute inset-0 bg-dot-texture-light opacity-[0.06]" />
           <div
             className="absolute -top-32 -right-24 h-96 w-96 rounded-full bg-secondary/25 blur-3xl"
             aria-hidden="true"
@@ -112,7 +112,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
                 }`}
                 aria-hidden={i !== index}
               >
-                <h1 className="animate-fade-in-up text-[23px] font-bold leading-tight text-white sm:ml-auto sm:max-w-3xl sm:text-5xl sm:leading-normal md:text-6xl">
+                <h1 className="animate-fade-in-up text-[23px] font-extrabold leading-tight tracking-tight text-white sm:ml-auto sm:max-w-3xl sm:text-5xl sm:leading-normal md:text-6xl">
                   {slide.headline}
                 </h1>
                 <p className="animate-fade-in-up mx-auto mt-4 max-w-2xl text-base text-white/90 sm:mr-0 sm:ml-auto sm:text-lg [animation-delay:150ms]">

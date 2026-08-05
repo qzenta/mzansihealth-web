@@ -43,9 +43,9 @@ export const siteConfig = {
 // PRD-001 once received.
 export const heroImages = [
   {
-    src: "/images/hero-caregiver.jpg",
-    alt: "A caregiver holding the hand of an elderly patient",
-    objectPosition: "center 30%",
+    src: "/images/hero-caregiver-bedside.jpg",
+    alt: "A caregiver holding the hand of an elderly patient at her bedside",
+    objectPosition: "73% 0%",
     headline: "Compassionate Home Healthcare You Can Trust",
     description:
     "Professional home and community care for individuals and families throughout South Africa — based in Queenstown, Eastern Cape.",

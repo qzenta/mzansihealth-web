@@ -77,13 +77,13 @@ export const pageBanners = {
   },
   services: {
     src: "/images/banner-services.jpg",
-    alt: "A caregiver showing an elderly patient something on a tablet",
-    objectPosition: "center 15%",
+    alt: "A Mzansi HealthCare caregiver assisting an elderly patient with a mobility exercise",
+    objectPosition: "center 20%",
   },
   gallery: {
     src: "/images/banner-gallery.jpg",
-    alt: "A caregiver sitting with an elderly patient at home",
-    objectPosition: "center 20%",
+    alt: "A caregiver and an elderly patient in a wheelchair laughing together on a garden patio",
+    objectPosition: "center 35%",
   },
   ourTeam: {
     src: "/images/banner-our-team.jpg",

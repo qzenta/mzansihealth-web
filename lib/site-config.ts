@@ -87,8 +87,8 @@ export const pageBanners = {
   },
   ourTeam: {
     src: "/images/banner-our-team.jpg",
-    alt: "Two smiling nurses in scrubs",
-    objectPosition: "center 25%",
+    alt: "Two smiling Mzansi HealthCare caregivers standing together in a warm living room",
+    objectPosition: "center 20%",
   },
   contact: {
     src: "/images/banner-contact-call.jpg",

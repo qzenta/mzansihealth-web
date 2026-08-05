@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
 
@@ -40,8 +41,16 @@ export default function Footer() {
 
       <div className="relative mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <p className="text-lg font-bold text-white">{siteConfig.name}</p>
-          <p className="mt-2 text-sm text-white/70">{siteConfig.tagline}</p>
+          <div className="inline-block rounded-lg bg-white px-3 py-2">
+            <Image
+              src="/images/logo-lockup.png"
+              alt={siteConfig.name}
+              width={1023}
+              height={390}
+              className="h-8 w-auto"
+            />
+          </div>
+          <p className="mt-3 text-sm text-white/70">{siteConfig.tagline}</p>
         </div>
 
         <div>

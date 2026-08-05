@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { siteConfig, socialLinks } from "@/lib/site-config";
 
@@ -75,8 +76,15 @@ export default function Nav() {
         </div>
       </div>
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6">
-        <Link href="/" className="text-lg font-bold text-primary" onClick={() => setIsOpen(false)}>
-          {siteConfig.name}
+        <Link href="/" className="shrink-0" onClick={() => setIsOpen(false)}>
+          <Image
+            src="/images/logo-lockup.png"
+            alt={siteConfig.name}
+            width={1023}
+            height={390}
+            priority
+            className="h-9 w-auto sm:h-10"
+          />
         </Link>
         <nav className="hidden gap-6 md:flex">
           {links.map((link) => (

@@ -9,7 +9,7 @@ export default function TrustBadgeMarquee({ badges }: TrustBadgeMarqueeProps) {
   const track = [...badges, ...badges];
 
   return (
-    <div className="group overflow-hidden border-y border-secondary/30 bg-secondary/20 py-6">
+    <div className="group overflow-hidden border-y border-secondary/40 bg-secondary/30 py-6">
       <div className="flex w-max animate-marquee gap-4 group-hover:[animation-play-state:paused]">
         {track.map((badge, i) => (
           <span

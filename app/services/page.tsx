@@ -16,7 +16,7 @@ export default function ServicesPage() {
         subtitle="Professional, compassionate healthcare services delivered where you need them most."
         image={pageBanners.services}
       />
-      <section className="bg-secondary/15 py-16">
+      <section className="bg-secondary/25 py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (

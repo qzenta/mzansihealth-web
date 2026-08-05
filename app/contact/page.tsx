@@ -17,7 +17,7 @@ export default function ContactPage() {
         subtitle="Reach out and our team will get back to you as soon as possible."
         image={pageBanners.contact}
       />
-      <section className="relative overflow-hidden bg-secondary/15 py-16">
+      <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
         <div className="relative mx-auto max-w-5xl px-4 sm:px-6">
           <div className="grid gap-12 md:grid-cols-2">
@@ -72,10 +72,12 @@ export default function ContactPage() {
               You&rsquo;ll find us at {siteConfig.address}, and our caregivers come directly to
               you across {siteConfig.serviceArea}.
             </p>
-            <div className="mt-4">
-              <GoogleMap />
-            </div>
           </div>
+        </div>
+
+        {/* Full-bleed map, breaks out of the max-w-5xl content column to span the full width. */}
+        <div className="relative left-1/2 mt-4 w-screen -translate-x-1/2">
+          <GoogleMap />
         </div>
       </section>
     </>

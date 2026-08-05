@@ -12,7 +12,7 @@ export default function GalleryPage() {
   return (
     <>
       <PageBanner title="Gallery" image={pageBanners.gallery} />
-      <section className="relative overflow-hidden bg-secondary/15 py-16">
+      <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <p className="mx-auto max-w-2xl text-center text-foreground/80">

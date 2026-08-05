@@ -25,7 +25,7 @@ export default function HomePage() {
       <TrustBadgeMarquee badges={trustBadges} />
 
       {/* Trust points */}
-      <section className="relative overflow-hidden bg-secondary/15 py-16">
+      <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div
           className="pointer-events-none absolute inset-0"
           style={{
@@ -105,7 +105,7 @@ export default function HomePage() {
       </section>
 
       {/* Services preview */}
-      <section className="bg-secondary/15 py-16">
+      <section className="bg-secondary/25 py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">Our Services</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -173,7 +173,7 @@ export default function HomePage() {
       </section>
 
       {/* Meet the team */}
-      <section className="relative overflow-hidden bg-secondary/15 py-16">
+      <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
           <h2 className="text-center text-2xl font-bold text-primary sm:text-3xl">Meet Our Team</h2>

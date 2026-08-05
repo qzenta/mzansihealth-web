@@ -66,39 +66,38 @@ export const heroImages = [
   },
 ] as const;
 
-// Per-page banners — reuse existing sample imagery cropped to a wide banner aspect ratio,
-// same sourcing/TODO convention as the hero and service card photos above.
-// About uses the faceless hands/wheelchair shot instead of a face-forward photo — an "about"
-// banner doesn't need a face, and it avoids re-showing the same person as the hero/service cards.
+// Per-page banners — each uses a dedicated photo not reused anywhere else on the site (hero,
+// service cards, or gallery), so no two pages show the same image. Free-license Pexels sample
+// imagery, same sourcing/TODO convention as the hero and service card photos above.
 export const pageBanners = {
   about: {
-    src: "/images/service-disability-support.jpg",
-    alt: "A caregiver's hands assisting with a wheelchair at home",
-    objectPosition: "center",
+    src: "/images/banner-about.jpg",
+    alt: "A caregiver reading with an elderly patient at home",
+    objectPosition: "center 20%",
   },
   services: {
-    src: "/images/service-home-nursing.jpg",
-    alt: "A nurse providing home healthcare to a patient",
-    objectPosition: "center 25%",
+    src: "/images/banner-services.jpg",
+    alt: "A caregiver showing an elderly patient something on a tablet",
+    objectPosition: "center 15%",
   },
   gallery: {
-    src: "/images/service-community.jpg",
-    alt: "Community healthcare outreach in action",
-    objectPosition: "center 25%",
+    src: "/images/banner-gallery.jpg",
+    alt: "A caregiver sitting with an elderly patient at home",
+    objectPosition: "center 20%",
   },
   ourTeam: {
-    src: "/images/service-elderly-care.jpg",
-    alt: "A caregiver attending to an elderly patient",
-    objectPosition: "center 30%",
-  },
-  contact: {
-    src: "/images/hero-caregiver.jpg",
-    alt: "A caregiver holding the hand of an elderly patient",
+    src: "/images/banner-our-team.jpg",
+    alt: "Two smiling nurses in scrubs",
     objectPosition: "center 25%",
   },
+  contact: {
+    src: "/images/banner-contact-call.jpg",
+    alt: "A smiling call agent wearing a headset",
+    objectPosition: "center 20%",
+  },
   faq: {
-    src: "/images/service-medication.jpg",
-    alt: "Medication assistance for a patient",
+    src: "/images/banner-faq.jpg",
+    alt: "A caregiver assisting an elderly patient at home",
     objectPosition: "center",
   },
 } as const;

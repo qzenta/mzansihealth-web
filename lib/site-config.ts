@@ -72,8 +72,8 @@ export const heroImages = [
 export const pageBanners = {
   about: {
     src: "/images/banner-about.jpg",
-    alt: "A caregiver reading with an elderly patient at home",
-    objectPosition: "center 20%",
+    alt: "A Mzansi HealthCare caregiver sitting with an elderly patient in a warm living room",
+    objectPosition: "center 35%",
   },
   services: {
     src: "/images/banner-services.jpg",

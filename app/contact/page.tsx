@@ -16,6 +16,7 @@ export default function ContactPage() {
         title="Contact Us"
         subtitle="Reach out and our team will get back to you as soon as possible."
         image={pageBanners.contact}
+        tall
       />
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />

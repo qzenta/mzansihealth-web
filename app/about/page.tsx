@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <PageBanner title={`About ${siteConfig.name}`} image={pageBanners.about} />
+      <PageBanner title={`About ${siteConfig.name}`} image={pageBanners.about} tall />
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6">

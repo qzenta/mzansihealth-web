@@ -15,6 +15,7 @@ export default function ServicesPage() {
         title="Our Services"
         subtitle="Professional, compassionate healthcare services delivered where you need them most."
         image={pageBanners.services}
+        tall
       />
       <section className="bg-secondary/25 py-16">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">

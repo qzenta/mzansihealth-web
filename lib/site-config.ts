@@ -92,8 +92,8 @@ export const pageBanners = {
   },
   contact: {
     src: "/images/banner-contact-call.jpg",
-    alt: "A smiling call agent wearing a headset",
-    objectPosition: "center 20%",
+    alt: "A smiling Mzansi HealthCare receptionist answering a phone call at the front desk",
+    objectPosition: "center 30%",
   },
   faq: {
     src: "/images/banner-faq.jpg",

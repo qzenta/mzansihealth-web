@@ -48,6 +48,26 @@ const statIcons: Record<string, ReactNode> = {
 export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarouselProps) {
   const [index, setIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
+  const whatsAppRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!isWhatsAppOpen) return;
+    const onClickOutside = (e: MouseEvent) => {
+      if (whatsAppRef.current && !whatsAppRef.current.contains(e.target as Node)) {
+        setIsWhatsAppOpen(false);
+      }
+    };
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsWhatsAppOpen(false);
+    };
+    document.addEventListener("mousedown", onClickOutside);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("mousedown", onClickOutside);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isWhatsAppOpen]);
 
   const goTo = useCallback(
     (next: number) => {
@@ -128,23 +148,37 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
             >
               Call Now
             </a>
-            <a
-              href={siteConfig.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-primary-dark transition-transform hover:-translate-y-0.5 hover:opacity-90"
-            >
-              WhatsApp
-            </a>
-            <a
-              href={siteConfig.whatsappSecondaryLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`WhatsApp alternate number, ${siteConfig.whatsappSecondaryNumber}`}
-              className="rounded-full border border-secondary px-4 py-3 text-xs font-semibold text-secondary transition-transform hover:-translate-y-0.5 hover:bg-secondary hover:text-primary-dark"
-            >
-              WhatsApp (alt)
-            </a>
+            <div ref={whatsAppRef} className="relative">
+              {isWhatsAppOpen && (
+                <div className="animate-fade-in-up absolute bottom-full left-1/2 z-10 mb-2 flex -translate-x-1/2 flex-col items-stretch gap-2 whitespace-nowrap">
+                  <a
+                    href={siteConfig.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-secondary px-5 py-2.5 text-center text-sm font-semibold text-primary-dark shadow-lg transition hover:opacity-90"
+                  >
+                    Main Line
+                  </a>
+                  <a
+                    href={siteConfig.whatsappSecondaryLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full bg-secondary px-5 py-2.5 text-center text-sm font-semibold text-primary-dark shadow-lg transition hover:opacity-90"
+                  >
+                    Alternate Line
+                  </a>
+                </div>
+              )}
+              <button
+                type="button"
+                onClick={() => setIsWhatsAppOpen((open) => !open)}
+                aria-haspopup="true"
+                aria-expanded={isWhatsAppOpen}
+                className="rounded-full bg-secondary px-6 py-3 text-sm font-semibold text-primary-dark transition-transform hover:-translate-y-0.5 hover:opacity-90"
+              >
+                WhatsApp
+              </button>
+            </div>
             <Link
               href="/contact"
               className="rounded-full border border-white px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-white hover:text-primary"

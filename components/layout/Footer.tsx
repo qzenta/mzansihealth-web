@@ -66,11 +66,21 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href={siteConfig.whatsappLink} className="hover:text-white">
+              <a
+                href={siteConfig.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
                 WhatsApp
               </a>{" "}
               /{" "}
-              <a href={siteConfig.whatsappSecondaryLink} className="hover:text-white">
+              <a
+                href={siteConfig.whatsappSecondaryLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white"
+              >
                 WhatsApp (alt)
               </a>
             </li>

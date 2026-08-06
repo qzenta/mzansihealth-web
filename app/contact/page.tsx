@@ -41,11 +41,21 @@ export default function ContactPage() {
                 </li>
                 <li>
                   <span className="block text-sm font-medium text-foreground">WhatsApp</span>
-                  <a href={siteConfig.whatsappLink} className="hover:text-primary">
+                  <a
+                    href={siteConfig.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary"
+                  >
                     Message us on WhatsApp
                   </a>{" "}
                   /{" "}
-                  <a href={siteConfig.whatsappSecondaryLink} className="hover:text-primary">
+                  <a
+                    href={siteConfig.whatsappSecondaryLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-primary"
+                  >
                     alt line
                   </a>
                 </li>

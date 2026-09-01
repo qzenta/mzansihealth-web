@@ -15,7 +15,11 @@ export default function FaqPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(faqs)) }}
       />
-      <PageBanner title="Frequently Asked Questions" image={pageBanners.faq} />
+      <PageBanner
+        title="Frequently Asked Questions"
+        image={pageBanners.faq}
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "FAQ" }]}
+      />
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />
         <div className="relative mx-auto max-w-3xl px-4 sm:px-6">

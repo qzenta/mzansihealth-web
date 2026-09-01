@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { howItWorks, siteConfig } from "@/lib/site-config";
 import ConversionCta from "@/components/shared/ConversionCta";
+import Breadcrumbs from "@/components/shared/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "How It Works",
@@ -10,14 +11,15 @@ export const metadata: Metadata = {
 export default function HowItWorksPage() {
   return (
     <>
-      <section className="bg-primary-dark py-16 text-center text-white sm:py-20">
+      <section className="bg-primary-dark py-8 text-center text-white sm:py-10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">How It Works</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">How It Works</h1>
+          <p className="mx-auto mt-3 max-w-2xl text-base text-white/90">
             From your first enquiry to care beginning at home — here&rsquo;s what to expect.
           </p>
         </div>
       </section>
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "How It Works" }]} />
 
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />

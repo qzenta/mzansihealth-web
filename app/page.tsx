@@ -77,7 +77,11 @@ export default function HomePage() {
           </h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {whyChooseUs.map((point) => (
-              <div key={point.title} tabIndex={0} className="flip-card h-60 outline-none">
+              <div
+                key={point.title}
+                tabIndex={0}
+                className="flip-card h-60 rounded-2xl outline-none focus-visible:ring-2 focus-visible:ring-secondary focus-visible:ring-offset-2"
+              >
                 <div className="flip-card-inner">
                   <div className="flip-card-front flex flex-col items-center justify-center overflow-hidden rounded-2xl p-6 text-center shadow-sm">
                     <Image

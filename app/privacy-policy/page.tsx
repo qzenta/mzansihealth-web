@@ -49,16 +49,19 @@ export default function PrivacyPolicyPage() {
           <h2 className="text-xl font-semibold text-primary">Analytics and website usage data</h2>
           <p className="mt-2">
             This website uses <strong>Google Analytics (GA4)</strong> and{" "}
-            <strong>Microsoft Clarity</strong> to understand how visitors use the site. These run
-            automatically on every page from your first visit, before any action on your part, and
-            set cookies in your browser. Google Analytics collects usage data such as pages
-            viewed, device and browser type, and approximate location derived from your IP
-            address. Microsoft Clarity collects usage data such as clicks, scrolling, and page
-            navigation, which may include session recordings and heatmaps of how the site is
-            used. Neither tool is used to identify you personally, and neither is used to track
-            you outside this website. We do not currently offer a cookie-consent banner or
-            opt-out control on this website; if you wish to prevent this data collection, you can
-            block cookies or these scripts using your browser or a browser extension.
+            <strong>Microsoft Clarity</strong> to understand how visitors use the site. Google
+            Analytics collects usage data such as pages viewed, device and browser type, and
+            approximate location derived from your IP address. Microsoft Clarity collects usage
+            data such as clicks, scrolling, and page navigation, which may include session
+            recordings and heatmaps of how the site is used. Neither tool is used to identify you
+            personally, and neither is used to track you outside this website.
+          </p>
+          <p className="mt-2">
+            Neither tool runs, and no analytics cookies are set, until you accept the cookie
+            banner shown on your first visit. If you decline, only strictly necessary site
+            functionality runs — no analytics data is collected. You can change your choice at
+            any time via the &ldquo;Cookie Preferences&rdquo; link in the footer, which resets
+            your decision and shows the banner again immediately.
           </p>
         </div>
 

@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import WhatsAppCTA from "@/components/layout/WhatsAppCTA";
 import GoogleAnalytics from "@/components/layout/GoogleAnalytics";
 import MicrosoftClarity from "@/components/layout/MicrosoftClarity";
+import CookieConsentBanner from "@/components/shared/CookieConsentBanner";
 import { siteConfig } from "@/lib/site-config";
 import { organizationSchema } from "@/lib/schema";
 import "./globals.css";
@@ -57,6 +58,7 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppCTA />
+        <CookieConsentBanner />
       </body>
     </html>
   );

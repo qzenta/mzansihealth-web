@@ -127,4 +127,14 @@ export const faqs = [
     answer:
       "No. We provide scheduled home healthcare, not emergency response. In a medical emergency, call 10177 (ambulance) or 112 from a mobile phone.",
   },
+  {
+    question: "Will my family be kept informed about the care being provided?",
+    answer:
+      "Yes — we work directly with families as well as patients, and stay in touch to review the care arrangement as circumstances change.",
+  },
+  {
+    question: "How is my personal information handled?",
+    answer:
+      "We only use the information you provide to respond to your enquiry and coordinate care — see our Privacy Policy and POPIA Compliance pages for full detail.",
+  },
 ];

@@ -90,9 +90,9 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
   }, [isPaused, slides.length, intervalMs]);
 
   return (
-    <div className="mx-3 mt-3 mb-2 sm:mx-6 sm:mt-6 sm:mb-3">
+    <div className="mx-3 mt-2 mb-2 sm:mx-6 sm:mt-3 sm:mb-2">
       <div
-        className="relative min-h-[320px] overflow-hidden rounded-3xl shadow-xl sm:min-h-[360px] sm:rounded-[2rem]"
+        className="relative min-h-[240px] overflow-hidden rounded-3xl shadow-xl sm:min-h-[260px] sm:rounded-[2rem]"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={() => setIsPaused(true)}

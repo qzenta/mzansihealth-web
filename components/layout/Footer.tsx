@@ -42,15 +42,17 @@ export default function Footer() {
 
       <div className="relative mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-3">
         <div>
-          <div className="inline-block rounded-lg bg-white px-3 py-2">
-            <Image
-              src="/images/logo-lockup.png"
-              alt={siteConfig.name}
-              width={1023}
-              height={390}
-              className="h-8 w-auto"
-            />
-          </div>
+          {/* Logo file has a genuinely transparent background (verified: alpha=0 at the
+              corners), so no white box behind it — but its ink is dark teal, almost the same
+              as this dark-teal footer, so it renders as a white silhouette via CSS filter
+              instead of disappearing. */}
+          <Image
+            src="/images/logo-lockup.png"
+            alt={siteConfig.name}
+            width={1023}
+            height={390}
+            className="h-8 w-auto brightness-0 invert"
+          />
           <p className="mt-3 text-sm text-white/70">{siteConfig.tagline}</p>
         </div>
 

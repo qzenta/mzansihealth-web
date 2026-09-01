@@ -4,6 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig, socialLinks } from "@/lib/site-config";
+import { trackEvent } from "@/lib/analytics";
 
 const links = [
   { href: "/", label: "Home" },
@@ -13,6 +14,7 @@ const links = [
   { href: "/gallery", label: "Gallery" },
   { href: "/our-team", label: "Our Team" },
   { href: "/caregiver-trust", label: "Caregiver Trust" },
+  { href: "/for-healthcare-professionals", label: "Healthcare Professionals" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -37,11 +39,19 @@ export default function Nav() {
           </a>
           <span className="flex items-center gap-1">
             <span className="hidden sm:inline text-white/70">Call:</span>
-            <a href={`tel:${siteConfig.phoneIntl}`} className="hover:underline">
+            <a
+              href={`tel:${siteConfig.phoneIntl}`}
+              onClick={() => trackEvent("phone_click", { page: "nav", line: "primary" })}
+              className="hover:underline"
+            >
               {siteConfig.phone}
             </a>
             {" / "}
-            <a href={`tel:${siteConfig.phoneSecondaryIntl}`} className="hover:underline">
+            <a
+              href={`tel:${siteConfig.phoneSecondaryIntl}`}
+              onClick={() => trackEvent("phone_click", { page: "nav", line: "secondary" })}
+              className="hover:underline"
+            >
               {siteConfig.phoneSecondary}
             </a>
           </span>
@@ -102,6 +112,7 @@ export default function Nav() {
         <div className="flex items-center gap-2">
           <a
             href={`tel:${siteConfig.phoneIntl}`}
+            onClick={() => trackEvent("phone_click", { page: "nav", line: "call-now-button" })}
             className="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary-dark"
           >
             Call Now

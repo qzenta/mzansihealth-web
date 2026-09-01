@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { howItWorks, siteConfig } from "@/lib/site-config";
+import ConversionCta from "@/components/shared/ConversionCta";
 
 export const metadata: Metadata = {
   title: "How It Works",
@@ -42,31 +42,7 @@ export default function HowItWorksPage() {
             ))}
           </ol>
 
-          <div className="mt-12 rounded-2xl bg-primary p-8 text-center text-white">
-            <h2 className="text-xl font-semibold">Ready to talk about the care you need?</h2>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/contact"
-                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-neutral"
-              >
-                Request a Care Assessment
-              </Link>
-              <a
-                href={siteConfig.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
-              >
-                WhatsApp Us
-              </a>
-              <a
-                href={`tel:${siteConfig.phoneIntl}`}
-                className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
-              >
-                Call Us
-              </a>
-            </div>
-          </div>
+          <ConversionCta heading="Ready to talk about the care you need?" page="how-it-works" />
         </div>
       </section>
     </>

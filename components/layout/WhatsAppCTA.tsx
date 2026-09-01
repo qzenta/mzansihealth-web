@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { siteConfig } from "@/lib/site-config";
+import { trackEvent } from "@/lib/analytics";
 
 function WhatsAppIcon({ className = "h-5 w-5" }: { className?: string }) {
   return (
@@ -41,6 +42,7 @@ export default function WhatsAppCTA() {
             href={siteConfig.whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("whatsapp_click", { page: "floating-cta", line: "primary" })}
             className="flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-primary-dark shadow-lg transition hover:opacity-90"
           >
             <WhatsAppIcon className="h-4 w-4" />
@@ -50,6 +52,7 @@ export default function WhatsAppCTA() {
             href={siteConfig.whatsappSecondaryLink}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackEvent("whatsapp_click", { page: "floating-cta", line: "secondary" })}
             className="flex items-center gap-2 rounded-full bg-[#25D366] px-4 py-2.5 text-sm font-semibold text-primary-dark shadow-lg transition hover:opacity-90"
           >
             <WhatsAppIcon className="h-4 w-4" />

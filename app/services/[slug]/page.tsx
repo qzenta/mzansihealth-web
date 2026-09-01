@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { emergencyNotice, services, serviceDetails, siteConfig, teamMembers } from "@/lib/site-config";
+import { emergencyNotice, services, serviceDetails, teamMembers } from "@/lib/site-config";
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
+import TrackPageView from "@/components/shared/TrackPageView";
+import ConversionCta from "@/components/shared/ConversionCta";
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
@@ -35,6 +37,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
   return (
     <>
+      <TrackPageView event="service_page_view" params={{ service: service.slug }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(details.faqs)) }}
@@ -140,31 +143,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </div>
           </div>
 
-          <div className="mt-12 rounded-2xl bg-primary p-8 text-center text-white">
-            <h2 className="text-xl font-semibold">Ready to discuss {service.name.toLowerCase()}?</h2>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/contact"
-                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-neutral"
-              >
-                Request a Care Assessment
-              </Link>
-              <a
-                href={siteConfig.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
-              >
-                WhatsApp Us
-              </a>
-              <a
-                href={`tel:${siteConfig.phoneIntl}`}
-                className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
-              >
-                Call Us
-              </a>
-            </div>
-          </div>
+          <ConversionCta
+            heading={`Ready to discuss ${service.name.toLowerCase()}?`}
+            page={`service:${service.slug}`}
+          />
         </div>
       </section>
     </>

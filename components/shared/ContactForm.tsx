@@ -23,7 +23,10 @@ export default function ContactForm() {
           name: formData.get("name"),
           phone: formData.get("phone"),
           email: formData.get("email"),
+          location: formData.get("location"),
           service: formData.get("service"),
+          startDate: formData.get("startDate"),
+          careArrangement: formData.get("careArrangement"),
           message: formData.get("message"),
           website: formData.get("website"),
         }),
@@ -70,6 +73,17 @@ export default function ContactForm() {
       </label>
 
       <label className="block text-sm font-medium text-foreground">
+        Location
+        <input
+          name="location"
+          type="text"
+          placeholder="Suburb / town"
+          required
+          className="mt-1 w-full rounded-lg border border-foreground/15 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+        />
+      </label>
+
+      <label className="block text-sm font-medium text-foreground">
         Service Required
         <select
           name="service"
@@ -89,11 +103,35 @@ export default function ContactForm() {
         </select>
       </label>
 
+      <div className="grid gap-4 sm:grid-cols-2">
+        <label className="block text-sm font-medium text-foreground">
+          Preferred Start Date
+          <input
+            name="startDate"
+            type="date"
+            className="mt-1 w-full rounded-lg border border-foreground/15 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          />
+        </label>
+
+        <label className="block text-sm font-medium text-foreground">
+          Preferred Care Arrangement
+          <select
+            name="careArrangement"
+            defaultValue=""
+            className="mt-1 w-full rounded-lg border border-foreground/15 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+          >
+            <option value="">Not sure yet</option>
+            <option value="A few hours a day">A few hours a day</option>
+            <option value="Daily visits">Daily visits</option>
+            <option value="24-hour live-in">24-hour live-in</option>
+          </select>
+        </label>
+      </div>
+
       <label className="block text-sm font-medium text-foreground">
-        Message
+        Additional Information
         <textarea
           name="message"
-          required
           rows={4}
           className="mt-1 w-full rounded-lg border border-foreground/15 bg-white px-3 py-2 text-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
         />
@@ -112,7 +150,7 @@ export default function ContactForm() {
         disabled={status === "submitting"}
         className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white hover:bg-primary-dark disabled:opacity-50"
       >
-        {status === "submitting" ? "Sending…" : "Send Message"}
+        {status === "submitting" ? "Sending…" : "Request a Care Assessment"}
       </button>
 
       {status === "success" && (

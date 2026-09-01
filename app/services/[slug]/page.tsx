@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { emergencyNotice, services, serviceDetails, siteConfig, teamMembers } from "@/lib/site-config";
-import { faqSchema } from "@/lib/schema";
+import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
@@ -38,6 +38,22 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema(details.faqs)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema(service)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            breadcrumbSchema([
+              { name: "Home", path: "/" },
+              { name: "Services", path: "/services" },
+              { name: service.name, path: `/services/${service.slug}` },
+            ])
+          ),
+        }}
       />
 
       <section className="relative overflow-hidden">

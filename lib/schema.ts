@@ -21,6 +21,52 @@ export function organizationSchema() {
   };
 }
 
+export function serviceSchema(service: { name: string; description: string; slug: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: service.name,
+    name: service.name,
+    description: service.description,
+    url: `${siteConfig.siteUrl}/services/${service.slug}`,
+    areaServed: siteConfig.serviceArea,
+    provider: {
+      "@type": "MedicalBusiness",
+      name: siteConfig.name,
+      url: siteConfig.siteUrl,
+      telephone: siteConfig.phoneIntl,
+    },
+  };
+}
+
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteConfig.siteUrl}${item.path}`,
+    })),
+  };
+}
+
+export function personSchema(member: { name: string; role: string; bio: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: member.name,
+    jobTitle: member.role,
+    description: member.bio,
+    worksFor: {
+      "@type": "MedicalBusiness",
+      name: siteConfig.name,
+      url: siteConfig.siteUrl,
+    },
+  };
+}
+
 export function faqSchema(items: { question: string; answer: string }[]) {
   return {
     "@context": "https://schema.org",

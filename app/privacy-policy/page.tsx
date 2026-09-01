@@ -27,10 +27,11 @@ export default function PrivacyPolicyPage() {
         <div>
           <h2 className="text-xl font-semibold text-primary">Information we collect</h2>
           <p className="mt-2">
-            When you submit our contact form, we collect the information you provide directly:
-            your name, phone number, email address, the service you are enquiring about, and your
-            message. We do not collect payment information, medical records, or other sensitive
-            personal information through this website.
+            When you submit our Request a Care Assessment form, we collect the information you
+            provide directly: your name, phone number, email address, location, the service you
+            are enquiring about, your preferred start date and care arrangement, and any
+            additional information you choose to add. We do not collect payment information,
+            medical records, or other sensitive personal information through this website.
           </p>
         </div>
 

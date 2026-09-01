@@ -32,11 +32,13 @@ export default function ConsentPage() {
         <div>
           <h2 className="text-xl font-semibold text-primary">Consent to being contacted</h2>
           <p className="mt-2">
-            When you submit our contact form with your name, phone number, email address, service
-            of interest, and message, you are consenting to {siteConfig.name}{" "}
-            contacting you by phone, WhatsApp, or email to respond to your enquiry and discuss the
-            care services you are interested in. We only use these details for this purpose, and
-            we do not add you to any marketing list without asking you separately first.
+            When you submit our Request a Care Assessment form with your name, phone number,
+            email address, location, service of interest, and any preferred start date, care
+            arrangement, or additional information you provide, you are consenting to{" "}
+            {siteConfig.name} contacting you by phone, WhatsApp, or email to respond to your
+            enquiry and discuss the care services you are interested in. We only use these
+            details for this purpose, and we do not add you to any marketing list without asking
+            you separately first.
           </p>
         </div>
 

@@ -310,6 +310,78 @@ export const galleryItems = [
   },
 ] as const;
 
+// "Who We Help" — homepage section grouping the 7 confirmed services (above) into the customer
+// situations they serve, per the CC Implementation Handoff (1 Sep 2026) §6.C. Descriptions are
+// paraphrases of the already-confirmed service copy, not new factual claims.
+export const whoWeHelp = [
+  {
+    title: "Recovering After Hospital",
+    description:
+      "Support for patients recently discharged, including wound care, mobility assistance, and follow-up routines to speed up recovery.",
+  },
+  {
+    title: "Ageing at Home",
+    description:
+      "Gentle, respectful assistance with daily activities — bathing, dressing, meal preparation, and companionship.",
+  },
+  {
+    title: "Living With an Ongoing Condition",
+    description: "Compassionate support for chronic conditions, focused on comfort, dignity, and daily wellbeing.",
+  },
+  {
+    title: "Needing Palliative Support",
+    description: "Comfort-focused, dignified care for patients living with a terminal illness, and their families.",
+  },
+  {
+    title: "Living With a Disability",
+    description:
+      "Home-based support with mobility, daily routines, and personal care, so clients can live independently.",
+  },
+] as const;
+
+// "How It Works" — customer journey steps, per handoff §6.E / §8. Deliberately generic process
+// language (no timelines, numbers, or operational specifics that haven't been confirmed) —
+// adapt once Azande/Lizzy confirm the actual step-by-step intake process.
+export const howItWorks = [
+  {
+    step: 1,
+    title: "Tell Us What You Need",
+    description: "Call, WhatsApp, or send a Request a Care Assessment form — tell us about the care situation.",
+  },
+  {
+    step: 2,
+    title: "We Discuss the Care Required",
+    description: "Our team talks through the patient's needs, home situation, and the kind of support that fits.",
+  },
+  {
+    step: 3,
+    title: "We Build a Care Arrangement",
+    description: "We put together a care plan and arrangement suited to the patient and family.",
+  },
+  {
+    step: 4,
+    title: "We Match a Caregiver",
+    description: "A caregiver suited to the care requirements is assigned, under the supervision of our Clinical Manager.",
+  },
+  {
+    step: 5,
+    title: "Care Begins",
+    description: "Care starts at home, on the agreed schedule — hourly, live-in, or however it was arranged.",
+  },
+  {
+    step: 6,
+    title: "We Review as Needed",
+    description: "We stay in touch with the family and adjust the care arrangement as circumstances change.",
+  },
+] as const;
+
+// Emergency notice — handoff §17. Verified South African public emergency numbers only; do not
+// add response-time claims or imply Mzansi HealthCare is an emergency medical service.
+export const emergencyNotice = {
+  heading: "Not an Emergency Service",
+  body: "Mzansi HealthCare provides scheduled home healthcare — we are not an emergency medical service. In a medical emergency, call 10177 (ambulance) or 112 (from a mobile phone) immediately.",
+} as const;
+
 // Named/photographed team profiles — permanent staff only (per client feedback, 5 Aug 2026).
 // Individual caregivers (previously Feziwe Gumede, Minenhle Makhathini) are intentionally NOT
 // listed here: caregiver assignments change per contract, so they're represented collectively via

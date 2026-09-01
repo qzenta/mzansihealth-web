@@ -4,7 +4,17 @@ import HeroCarousel from "@/components/shared/HeroCarousel";
 import ServiceCard from "@/components/shared/ServiceCard";
 import TeamMemberCard from "@/components/shared/TeamMemberCard";
 import TrustBadgeMarquee from "@/components/shared/TrustBadgeMarquee";
-import { heroImages, ourCaregivers, services, siteConfig, teamMembers, trustBadges, whyChooseUs } from "@/lib/site-config";
+import {
+  heroImages,
+  howItWorks,
+  ourCaregivers,
+  services,
+  siteConfig,
+  teamMembers,
+  trustBadges,
+  whoWeHelp,
+  whyChooseUs,
+} from "@/lib/site-config";
 import { faqSchema, faqs } from "@/lib/schema";
 
 export default function HomePage() {
@@ -23,6 +33,23 @@ export default function HomePage() {
       {/* Trust badges — generic/descriptive only, no third-party names or logos.
           See lib/site-config.ts for the confirmation note before adding claim-based badges. */}
       <TrustBadgeMarquee badges={trustBadges} />
+
+      {/* Who We Help */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-center text-2xl font-extrabold tracking-tight text-primary sm:text-3xl">
+            Who We Help
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
+            {whoWeHelp.map((item) => (
+              <div key={item.title} className="rounded-2xl border border-neutral bg-secondary/10 p-5 text-center shadow-sm">
+                <h3 className="font-semibold text-primary">{item.title}</h3>
+                <p className="mt-2 text-sm text-foreground/80">{item.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Trust points */}
       <section className="relative overflow-hidden bg-secondary/25 py-16">
@@ -172,6 +199,42 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* How It Works */}
+      <section className="bg-white py-16">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <h2 className="text-center text-2xl font-extrabold tracking-tight text-primary sm:text-3xl">
+            How It Works
+          </h2>
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {howItWorks.map((item) => (
+              <div key={item.step} className="rounded-2xl border border-neutral bg-secondary/10 p-6 shadow-sm">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
+                  {item.step}
+                </span>
+                <h3 className="mt-3 font-semibold text-primary">{item.title}</h3>
+                <p className="mt-2 text-sm text-foreground/80">{item.description}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 text-center">
+            <Link href="/how-it-works" className="text-sm font-semibold text-primary hover:underline">
+              More on how care begins →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Area */}
+      <section className="bg-secondary/25 py-16">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 text-center">
+          <h2 className="text-2xl font-extrabold tracking-tight text-primary sm:text-3xl">Where We Serve</h2>
+          <p className="mt-4 text-foreground/80">
+            {siteConfig.name} is based in {siteConfig.address}, providing home healthcare across
+            Queenstown / Komani and the surrounding Eastern Cape area.
+          </p>
+        </div>
+      </section>
+
       {/* Meet the team */}
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />
@@ -200,7 +263,7 @@ export default function HomePage() {
             href="/contact"
             className="mt-6 inline-block rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-neutral"
           >
-            Request Care Today
+            Request a Care Assessment
           </Link>
         </div>
       </section>

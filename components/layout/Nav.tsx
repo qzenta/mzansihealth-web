@@ -12,6 +12,7 @@ const links = [
   { href: "/how-it-works", label: "How It Works" },
   { href: "/gallery", label: "Gallery" },
   { href: "/our-team", label: "Our Team" },
+  { href: "/caregiver-trust", label: "Caregiver Trust" },
   { href: "/contact", label: "Contact" },
 ];
 

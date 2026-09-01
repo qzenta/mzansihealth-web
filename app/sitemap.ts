@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/how-it-works",
     "/gallery",
     "/our-team",
+    "/caregiver-trust",
     "/contact",
     "/faq",
     "/privacy-policy",

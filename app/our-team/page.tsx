@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import PageBanner from "@/components/shared/PageBanner";
 import TeamMemberCard from "@/components/shared/TeamMemberCard";
 import { ourCaregivers, pageBanners, siteConfig, teamMembers } from "@/lib/site-config";
+import { personSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
   title: "Our Team",
@@ -11,6 +12,13 @@ export const metadata: Metadata = {
 export default function OurTeamPage() {
   return (
     <>
+      {teamMembers.map((member) => (
+        <script
+          key={member.name}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema(member)) }}
+        />
+      ))}
       <PageBanner title="Our Team" image={pageBanners.ourTeam} tall />
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />

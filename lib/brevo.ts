@@ -4,8 +4,11 @@ interface ContactSubmission {
   name: string;
   phone: string;
   email: string;
+  location: string;
   service: string;
-  message: string;
+  startDate?: string;
+  careArrangement?: string;
+  message?: string;
 }
 
 const BREVO_API_URL = "https://api.brevo.com/v3/smtp/email";
@@ -30,8 +33,11 @@ export async function sendContactEmail(submission: ContactSubmission) {
         <p><strong>Name:</strong> ${submission.name}</p>
         <p><strong>Phone:</strong> ${submission.phone}</p>
         <p><strong>Email:</strong> ${submission.email}</p>
+        <p><strong>Location:</strong> ${submission.location}</p>
         <p><strong>Service Required:</strong> ${submission.service}</p>
-        <p><strong>Message:</strong> ${submission.message}</p>
+        <p><strong>Preferred Start Date:</strong> ${submission.startDate || "Not specified"}</p>
+        <p><strong>Preferred Care Arrangement:</strong> ${submission.careArrangement || "Not specified"}</p>
+        <p><strong>Additional Information:</strong> ${submission.message || "None"}</p>
       `,
     }),
   });

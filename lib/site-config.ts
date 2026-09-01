@@ -5,7 +5,7 @@ export const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mzansihealth.co.za",
   tagline: "Compassionate Home Healthcare You Can Trust",
   description:
-    "Professional home and community care for individuals and families throughout South Africa — based in Queenstown, Eastern Cape.",
+    "Professional home and community care for individuals and families in Komani (Queenstown) and surrounding areas, Eastern Cape.",
   // Primary line, used for the main Call/WhatsApp CTAs everywhere.
   phone: "0756211562",
   phoneIntl: "+27756211562",
@@ -31,7 +31,7 @@ export const siteConfig = {
     postalCode: "5319",
     addressRegion: "Eastern Cape",
   },
-  serviceArea: "South Africa",
+  serviceArea: "Komani (Queenstown) and surrounding areas, Eastern Cape",
   mapQuery: "15 Red Duiker Road, Madeira Park, Queenstown, 5319, Eastern Cape, South Africa",
 } as const;
 
@@ -48,7 +48,7 @@ export const heroImages = [
     objectPosition: "73% 0%",
     headline: "Compassionate Home Healthcare You Can Trust",
     description:
-    "Professional home and community care for individuals and families throughout South Africa — based in Queenstown, Eastern Cape.",
+    "Professional home and community care for individuals and families in Komani (Queenstown) and surrounding areas, Eastern Cape.",
   },
   {
     src: "/images/service-home-nursing.jpg",
@@ -107,7 +107,7 @@ export const pageBanners = {
 // internal icon set.
 export const heroStats = [
   { icon: "users", title: "Qualified Caregivers", description: "Trained & Experienced" },
-  { icon: "map-pin", title: "Home Visits", description: "Nationwide" },
+  { icon: "map-pin", title: "Home Visits", description: "Komani & Surrounds" },
   { icon: "shield-check", title: "Trusted Care", description: "Compassionate & Reliable" },
   { icon: "clock", title: "Flexible Scheduling", description: "Hourly to 24-Hour" },
 ] as const;
@@ -129,7 +129,7 @@ export const trustBadges = [
   { label: "Home Visits" },
   { label: "Flexible Scheduling" },
   { label: "Qualified Caregivers" },
-  { label: "Nationwide Service" },
+  { label: "Local Home Visits" },
 ] as const;
 
 // Service card photos are free-license Pexels stock (sample imagery), not real client/caregiver
@@ -192,6 +192,193 @@ export const services = [
     objectPosition: "center",
   },
 ] as const;
+
+// Service landing page detail content, per CC Implementation Handoff §7. Every field is a
+// paraphrase/expansion of the already-confirmed `services` description above (or of other
+// already-confirmed facts — the caregiver/clinical-supervision model, the How It Works steps,
+// the emergency-scope notice) — no new clinical specifics, qualifications, or capabilities are
+// introduced here. Content gap: the handoff's P1 priority list treats "Palliative Care" and
+// "Chronic/Ongoing Care" as two separate pages, but only one confirmed service — "Chronic
+// Illness and Palliative Care" — exists in the approved source content, so both priorities are
+// served by the single `chronic-illness-and-palliative-care` page below rather than splitting
+// one set of facts into two thin, near-duplicate pages (see §32).
+export const serviceDetails: Record<
+  string,
+  {
+    whoItsFor: string;
+    typicalSupport: string[];
+    doesNotCover: string;
+    faqs: { question: string; answer: string }[];
+  }
+> = {
+  "post-hospital-recovery-care": {
+    whoItsFor:
+      "Patients recently discharged from hospital who need continued, professional support to recover safely at home.",
+    typicalSupport: [
+      "Wound care",
+      "Mobility assistance",
+      "Medication management",
+      "Follow-up routines to support recovery",
+    ],
+    doesNotCover:
+      "This service supports recovery at home — it is not a substitute for hospital-based emergency or acute medical treatment.",
+    faqs: [
+      {
+        question: "How soon after discharge can post-hospital care start?",
+        answer:
+          "Reach out via phone, WhatsApp, or a care assessment request as soon as discharge is confirmed, and our team will get back to you promptly to arrange care.",
+      },
+      {
+        question: "Who supervises post-hospital recovery care?",
+        answer:
+          "Every caregiver works under the direct clinical supervision of our Registered Nurse and Clinical Manager, Elizabeth Ratau.",
+      },
+    ],
+  },
+  "elderly-care-and-companionship": {
+    whoItsFor:
+      "Elderly individuals who need assistance with daily activities, or companionship to prevent isolation.",
+    typicalSupport: [
+      "Bathing and dressing",
+      "Meal preparation",
+      "Companionship to prevent isolation",
+      "General assistance with daily activities",
+    ],
+    doesNotCover:
+      "This service supports daily living and companionship — it does not replace medical treatment or emergency care.",
+    faqs: [
+      {
+        question: "Can elderly care be a few hours a day, or does it need to be live-in?",
+        answer:
+          "Both — care can range from a few hours a day to 24-hour live-in support, depending on what's needed.",
+      },
+      {
+        question: "Are caregivers trained for elderly care specifically?",
+        answer:
+          "Caregivers are matched per contract to suit each client's needs, and all work under the direct clinical supervision of our Registered Nurse and Clinical Manager, Elizabeth Ratau.",
+      },
+    ],
+  },
+  "chronic-illness-and-palliative-care": {
+    whoItsFor:
+      "Patients living with chronic conditions or a terminal illness, and their families, who need comfort-focused, ongoing support.",
+    typicalSupport: [
+      "Comfort-focused, dignified care",
+      "Support for ongoing chronic conditions",
+      "Palliative support for terminal illness",
+      "Emotional well-being support for patients and families",
+    ],
+    doesNotCover:
+      "This service focuses on comfort and ongoing support at home — it does not include hospice or hospital-based medical treatment.",
+    faqs: [
+      {
+        question: "Do you provide both chronic illness support and palliative care?",
+        answer:
+          "Yes — this service covers ongoing support for chronic conditions as well as comfort-focused palliative care for terminal illness.",
+      },
+      {
+        question: "Who oversees clinical care for chronic and palliative patients?",
+        answer:
+          "Our Registered Nurse and Clinical Manager, Elizabeth Ratau, oversees clinical operations and supervises the caregiving team directly.",
+      },
+    ],
+  },
+  "medication-supervision-and-vital-checks": {
+    whoItsFor:
+      "Patients who need help taking medication correctly and having their vital signs monitored at home.",
+    typicalSupport: [
+      "Ensuring correct medication and timing",
+      "Blood pressure monitoring",
+      "Pulse and temperature checks",
+      "Tracking health progress over time",
+    ],
+    doesNotCover:
+      "This service supervises medication and monitors vitals at home — it does not include prescribing or diagnosing, which remain with the patient's doctor.",
+    faqs: [
+      {
+        question: "Can this service be combined with other care, like elderly or post-hospital care?",
+        answer:
+          "Yes — medication supervision and vital checks are often provided alongside other services as part of a broader care arrangement.",
+      },
+      {
+        question: "Who supervises medication and vital-check care?",
+        answer:
+          "Every caregiver works under the direct clinical supervision of our Registered Nurse and Clinical Manager, Elizabeth Ratau.",
+      },
+    ],
+  },
+  "24-hour-live-in-and-hourly-care": {
+    whoItsFor:
+      "Anyone who needs flexible care — from a few hours of daily support to round-the-clock live-in assistance.",
+    typicalSupport: [
+      "Round-the-clock live-in support",
+      "Flexible hourly visits",
+      "Care scheduled around your needs",
+    ],
+    doesNotCover:
+      "This service provides scheduled home care — it is not an emergency medical service.",
+    faqs: [
+      {
+        question: "What's the difference between hourly and live-in care?",
+        answer:
+          "Hourly care covers a set number of daily visits, while live-in care provides round-the-clock support from a caregiver based in the home.",
+      },
+      {
+        question: "Can I change between hourly and live-in care later?",
+        answer:
+          "Discuss your situation with our team via a care assessment request — care arrangements are reviewed and can be adjusted as circumstances change.",
+      },
+    ],
+  },
+  "hospital-to-home-transition-support": {
+    whoItsFor:
+      "Patients and families preparing to move from hospital back home, who want a coordinated, safe transition.",
+    typicalSupport: [
+      "Coordination with hospital staff and family",
+      "Caregiver readiness ahead of discharge",
+      "Equipment setup at home",
+      "Recovery planning",
+    ],
+    doesNotCover:
+      "This service coordinates the move from hospital to home — it does not replace the hospital's own discharge and treatment process.",
+    faqs: [
+      {
+        question: "When should we arrange hospital-to-home support?",
+        answer:
+          "As early as possible once discharge is being planned, so caregiver readiness and equipment setup can be arranged in time.",
+      },
+      {
+        question: "Do you coordinate directly with hospital staff?",
+        answer:
+          "Yes — this service is built around coordinating with hospital staff and family to ensure a smooth, safe transfer home.",
+      },
+    ],
+  },
+  "disability-care": {
+    whoItsFor:
+      "Individuals living with physical or intellectual disabilities who want to live independently and confidently at home.",
+    typicalSupport: [
+      "Mobility assistance",
+      "Daily routine support",
+      "Therapy exercise assistance",
+      "Personal care",
+    ],
+    doesNotCover:
+      "This service supports daily living and independence at home — it does not include specialist medical or therapeutic treatment itself.",
+    faqs: [
+      {
+        question: "Is disability care tailored to the individual?",
+        answer:
+          "Yes — care is matched per contract to each client's specific needs, under the direct clinical supervision of our Registered Nurse and Clinical Manager, Elizabeth Ratau.",
+      },
+      {
+        question: "Can disability care be combined with other services?",
+        answer:
+          "Yes — disability care is often arranged alongside services like medication supervision or live-in care, based on what's needed.",
+      },
+    ],
+  },
+};
 
 // About Us narrative, Mission, and Vision — full copy from the client's Website Draft (13 Jul 2026).
 export const about = {
@@ -309,6 +496,78 @@ export const galleryItems = [
     objectPosition: "center",
   },
 ] as const;
+
+// "Who We Help" — homepage section grouping the 7 confirmed services (above) into the customer
+// situations they serve, per the CC Implementation Handoff (1 Sep 2026) §6.C. Descriptions are
+// paraphrases of the already-confirmed service copy, not new factual claims.
+export const whoWeHelp = [
+  {
+    title: "Recovering After Hospital",
+    description:
+      "Support for patients recently discharged, including wound care, mobility assistance, and follow-up routines to speed up recovery.",
+  },
+  {
+    title: "Ageing at Home",
+    description:
+      "Gentle, respectful assistance with daily activities — bathing, dressing, meal preparation, and companionship.",
+  },
+  {
+    title: "Living With an Ongoing Condition",
+    description: "Compassionate support for chronic conditions, focused on comfort, dignity, and daily wellbeing.",
+  },
+  {
+    title: "Needing Palliative Support",
+    description: "Comfort-focused, dignified care for patients living with a terminal illness, and their families.",
+  },
+  {
+    title: "Living With a Disability",
+    description:
+      "Home-based support with mobility, daily routines, and personal care, so clients can live independently.",
+  },
+] as const;
+
+// "How It Works" — customer journey steps, per handoff §6.E / §8. Deliberately generic process
+// language (no timelines, numbers, or operational specifics that haven't been confirmed) —
+// adapt once Azande/Lizzy confirm the actual step-by-step intake process.
+export const howItWorks = [
+  {
+    step: 1,
+    title: "Tell Us What You Need",
+    description: "Call, WhatsApp, or send a Request a Care Assessment form — tell us about the care situation.",
+  },
+  {
+    step: 2,
+    title: "We Discuss the Care Required",
+    description: "Our team talks through the patient's needs, home situation, and the kind of support that fits.",
+  },
+  {
+    step: 3,
+    title: "We Build a Care Arrangement",
+    description: "We put together a care plan and arrangement suited to the patient and family.",
+  },
+  {
+    step: 4,
+    title: "We Match a Caregiver",
+    description: "A caregiver suited to the care requirements is assigned, under the supervision of our Clinical Manager.",
+  },
+  {
+    step: 5,
+    title: "Care Begins",
+    description: "Care starts at home, on the agreed schedule — hourly, live-in, or however it was arranged.",
+  },
+  {
+    step: 6,
+    title: "We Review as Needed",
+    description: "We stay in touch with the family and adjust the care arrangement as circumstances change.",
+  },
+] as const;
+
+// Emergency notice — handoff §17. Verified South African public emergency numbers only; do not
+// add response-time claims or imply Mzansi HealthCare is an emergency medical service.
+export const emergencyNotice = {
+  heading: "Not an Emergency Service",
+  body: "Mzansi HealthCare provides scheduled home healthcare — we are not an emergency medical service. In a medical emergency, call 10177 (ambulance) or 112 (from a mobile phone) immediately.",
+} as const;
 
 // Named/photographed team profiles — permanent staff only (per client feedback, 5 Aug 2026).
 // Individual caregivers (previously Feziwe Gumede, Minenhle Makhathini) are intentionally NOT

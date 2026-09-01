@@ -2,19 +2,19 @@ import type { Metadata } from "next";
 import ContactForm from "@/components/shared/ContactForm";
 import GoogleMap from "@/components/shared/GoogleMap";
 import PageBanner from "@/components/shared/PageBanner";
-import { pageBanners, siteConfig } from "@/lib/site-config";
+import { emergencyNotice, pageBanners, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Contact",
-  description: `Get in touch with ${siteConfig.name} — call, WhatsApp, or send a message.`,
+  title: "Request a Care Assessment",
+  description: `Request a care assessment from ${siteConfig.name} — call, WhatsApp, or send a message.`,
 };
 
 export default function ContactPage() {
   return (
     <>
       <PageBanner
-        title="Contact Us"
-        subtitle="Reach out and our team will get back to you as soon as possible."
+        title="Request a Care Assessment"
+        subtitle="Tell us about the care needed and our team will get back to you as soon as possible."
         image={pageBanners.contact}
         tall
       />
@@ -83,6 +83,11 @@ export default function ContactPage() {
               You&rsquo;ll find us at {siteConfig.address}, and our caregivers come directly to
               you across {siteConfig.serviceArea}.
             </p>
+          </div>
+
+          <div className="mt-8 rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-900">
+            <p className="font-semibold">{emergencyNotice.heading}</p>
+            <p className="mt-1">{emergencyNotice.body}</p>
           </div>
         </div>
 

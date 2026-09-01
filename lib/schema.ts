@@ -21,6 +21,52 @@ export function organizationSchema() {
   };
 }
 
+export function serviceSchema(service: { name: string; description: string; slug: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    serviceType: service.name,
+    name: service.name,
+    description: service.description,
+    url: `${siteConfig.siteUrl}/services/${service.slug}`,
+    areaServed: siteConfig.serviceArea,
+    provider: {
+      "@type": "MedicalBusiness",
+      name: siteConfig.name,
+      url: siteConfig.siteUrl,
+      telephone: siteConfig.phoneIntl,
+    },
+  };
+}
+
+export function breadcrumbSchema(items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: `${siteConfig.siteUrl}${item.path}`,
+    })),
+  };
+}
+
+export function personSchema(member: { name: string; role: string; bio: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: member.name,
+    jobTitle: member.role,
+    description: member.bio,
+    worksFor: {
+      "@type": "MedicalBusiness",
+      name: siteConfig.name,
+      url: siteConfig.siteUrl,
+    },
+  };
+}
+
 export function faqSchema(items: { question: string; answer: string }[]) {
   return {
     "@context": "https://schema.org",
@@ -60,5 +106,35 @@ export const faqs = [
     question: "How quickly can care begin?",
     answer:
       "Reach out via phone, WhatsApp, or the contact form and our team will get back to you promptly to discuss your needs and next steps.",
+  },
+  {
+    question: "Do you provide overnight or live-in care?",
+    answer:
+      "Yes — our 24-Hour Live-In and Hourly Care service covers everything from a few hours of daily support to round-the-clock live-in care.",
+  },
+  {
+    question: "How are caregivers selected and supervised?",
+    answer:
+      "Caregivers are matched per contract to suit each client's care requirements, and every caregiver works under the direct clinical supervision of our Registered Nurse and Clinical Manager, Elizabeth Ratau.",
+  },
+  {
+    question: "How much does home care cost?",
+    answer:
+      "Pricing depends on the type and hours of care required. Contact us for a care assessment and we'll discuss a care arrangement and cost suited to your situation.",
+  },
+  {
+    question: "Is Mzansi HealthCare an emergency medical service?",
+    answer:
+      "No. We provide scheduled home healthcare, not emergency response. In a medical emergency, call 10177 (ambulance) or 112 from a mobile phone.",
+  },
+  {
+    question: "Will my family be kept informed about the care being provided?",
+    answer:
+      "Yes — we work directly with families as well as patients, and stay in touch to review the care arrangement as circumstances change.",
+  },
+  {
+    question: "How is my personal information handled?",
+    answer:
+      "We only use the information you provide to respond to your enquiry and coordinate care — see our Privacy Policy and POPIA Compliance pages for full detail.",
   },
 ];

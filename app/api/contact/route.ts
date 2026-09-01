@@ -5,8 +5,11 @@ interface ContactBody {
   name: string;
   phone: string;
   email: string;
+  location: string;
   service: string;
-  message: string;
+  startDate?: string;
+  careArrangement?: string;
+  message?: string;
   website?: string;
 }
 
@@ -20,10 +23,10 @@ function isValidBody(body: unknown): body is ContactBody {
     b.phone.trim().length > 0 &&
     typeof b.email === "string" &&
     b.email.trim().length > 0 &&
+    typeof b.location === "string" &&
+    b.location.trim().length > 0 &&
     typeof b.service === "string" &&
-    b.service.trim().length > 0 &&
-    typeof b.message === "string" &&
-    b.message.trim().length > 0
+    b.service.trim().length > 0
   );
 }
 

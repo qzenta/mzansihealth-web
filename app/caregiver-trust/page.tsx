@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ourCaregivers, siteConfig, teamMembers, values } from "@/lib/site-config";
+import { caregiverQualifications, ourCaregivers, siteConfig, teamMembers } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "How We Select and Supervise Our Caregivers",
@@ -44,26 +44,17 @@ export default function CaregiverTrustPage() {
             </div>
 
             <div className="rounded-2xl border border-neutral bg-white p-6 shadow-sm">
-              <h2 className="text-xl font-semibold text-primary">Our Standards</h2>
-              <p className="mt-2 text-foreground/80">
-                These values guide how we select and support the people who provide your care:
-              </p>
-              <ul className="mt-4 space-y-3">
-                {values.map((value) => (
-                  <li key={value.title}>
-                    <span className="font-semibold text-primary">{value.title}:</span>{" "}
-                    <span className="text-foreground/80">{value.description}</span>
-                  </li>
-                ))}
-              </ul>
+              <h2 className="text-xl font-semibold text-primary">Qualifications</h2>
+              <p className="mt-2 text-foreground/80">{caregiverQualifications.clinicalOversight}</p>
+              <p className="mt-2 text-foreground/80">{caregiverQualifications.poolTraining}</p>
             </div>
           </div>
 
-          {/* Screening, qualification-minimums, training-curriculum, and continuity/replacement
-              specifics are intentionally NOT published here — no confirmed source material exists
-              for these beyond what's stated above (handoff §9: "Do not invent operational
-              controls. If information is unavailable, produce a content gap report rather than
-              making assumptions."). See the content-gap table in the implementation report. */}
+          {/* Screening, training-curriculum, and continuity/replacement specifics are
+              intentionally NOT published here — no confirmed source material exists for these
+              beyond what's stated above (handoff §9: "Do not invent operational controls. If
+              information is unavailable, produce a content gap report rather than making
+              assumptions."). See the content-gap table in the implementation report. */}
 
           <div className="mt-12 rounded-2xl bg-primary p-8 text-center text-white">
             <h2 className="text-xl font-semibold">Have questions about who will be caring for you?</h2>

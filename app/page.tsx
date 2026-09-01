@@ -5,6 +5,7 @@ import HeroCarousel from "@/components/shared/HeroCarousel";
 import ServiceCard from "@/components/shared/ServiceCard";
 import TeamMemberCard from "@/components/shared/TeamMemberCard";
 import TrustBadgeMarquee from "@/components/shared/TrustBadgeMarquee";
+import Testimonials from "@/components/shared/Testimonials";
 import {
   heroImages,
   howItWorks,
@@ -249,6 +250,8 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      <Testimonials />
 
       {/* Meet the team */}
       <section className="relative overflow-hidden bg-secondary/25 py-16">

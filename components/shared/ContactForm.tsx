@@ -1,12 +1,20 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { services } from "@/lib/site-config";
+import { trackEvent } from "@/lib/analytics";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
+  const hasStarted = useRef(false);
+
+  function handleFormFocus() {
+    if (hasStarted.current) return;
+    hasStarted.current = true;
+    trackEvent("care_assessment_start");
+  }
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -34,6 +42,8 @@ export default function ContactForm() {
 
       if (!res.ok) throw new Error("Request failed");
       setStatus("success");
+      trackEvent("care_assessment_submit");
+      trackEvent("contact_submit");
       form.reset();
     } catch {
       setStatus("error");
@@ -41,7 +51,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl space-y-4">
+    <form onSubmit={handleSubmit} onFocus={handleFormFocus} className="max-w-xl space-y-4">
       <label className="block text-sm font-medium text-foreground">
         Name
         <input

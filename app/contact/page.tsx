@@ -3,6 +3,7 @@ import ContactForm from "@/components/shared/ContactForm";
 import GoogleMap from "@/components/shared/GoogleMap";
 import PageBanner from "@/components/shared/PageBanner";
 import { emergencyNotice, pageBanners, siteConfig } from "@/lib/site-config";
+import TrackedLink from "@/components/shared/TrackedLink";
 
 export const metadata: Metadata = {
   title: "Request a Care Assessment",
@@ -31,33 +32,47 @@ export default function ContactPage() {
               <ul className="mt-4 space-y-3 text-foreground/80">
                 <li>
                   <span className="block text-sm font-medium text-foreground">Phone</span>
-                  <a href={`tel:${siteConfig.phoneIntl}`} className="hover:text-primary">
+                  <TrackedLink
+                    event="phone_click"
+                    eventParams={{ page: "contact", line: "primary" }}
+                    href={`tel:${siteConfig.phoneIntl}`}
+                    className="hover:text-primary"
+                  >
                     {siteConfig.phone}
-                  </a>{" "}
+                  </TrackedLink>{" "}
                   /{" "}
-                  <a href={`tel:${siteConfig.phoneSecondaryIntl}`} className="hover:text-primary">
+                  <TrackedLink
+                    event="phone_click"
+                    eventParams={{ page: "contact", line: "secondary" }}
+                    href={`tel:${siteConfig.phoneSecondaryIntl}`}
+                    className="hover:text-primary"
+                  >
                     {siteConfig.phoneSecondary}
-                  </a>
+                  </TrackedLink>
                 </li>
                 <li>
                   <span className="block text-sm font-medium text-foreground">WhatsApp</span>
-                  <a
+                  <TrackedLink
+                    event="whatsapp_click"
+                    eventParams={{ page: "contact", line: "primary" }}
                     href={siteConfig.whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-primary"
                   >
                     Message us on WhatsApp
-                  </a>{" "}
+                  </TrackedLink>{" "}
                   /{" "}
-                  <a
+                  <TrackedLink
+                    event="whatsapp_click"
+                    eventParams={{ page: "contact", line: "secondary" }}
                     href={siteConfig.whatsappSecondaryLink}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-primary"
                   >
                     alt line
-                  </a>
+                  </TrackedLink>
                 </li>
                 <li>
                   <span className="block text-sm font-medium text-foreground">Email</span>

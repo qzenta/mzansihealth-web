@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { caregiverQualifications, ourCaregivers, siteConfig, teamMembers } from "@/lib/site-config";
+import ConversionCta from "@/components/shared/ConversionCta";
 
 export const metadata: Metadata = {
   title: "How We Select and Supervise Our Caregivers",
@@ -56,25 +56,11 @@ export default function CaregiverTrustPage() {
               information is unavailable, produce a content gap report rather than making
               assumptions."). See the content-gap table in the implementation report. */}
 
-          <div className="mt-12 rounded-2xl bg-primary p-8 text-center text-white">
-            <h2 className="text-xl font-semibold">Have questions about who will be caring for you?</h2>
-            <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-              <Link
-                href="/contact"
-                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-primary hover:bg-neutral"
-              >
-                Request a Care Assessment
-              </Link>
-              <a
-                href={siteConfig.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white hover:bg-white/10"
-              >
-                WhatsApp Us
-              </a>
-            </div>
-          </div>
+          <ConversionCta
+            heading="Have questions about who will be caring for you?"
+            page="caregiver-trust"
+            showCall={false}
+          />
         </div>
       </section>
     </>

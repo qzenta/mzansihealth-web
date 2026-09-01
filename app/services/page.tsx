@@ -4,8 +4,8 @@ import ServiceCard from "@/components/shared/ServiceCard";
 import { pageBanners, services, siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Home Care Services in Komani (Queenstown), Eastern Cape",
-  description: `Home nursing, elderly care, disability support, and more from ${siteConfig.name}, serving Komani (Queenstown) and surrounding areas, Eastern Cape.`,
+  title: "Services",
+  description: `Home nursing, elderly care, disability support, and more from ${siteConfig.name}.`,
 };
 
 export default function ServicesPage() {

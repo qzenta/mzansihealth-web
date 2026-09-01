@@ -7,7 +7,7 @@ import Breadcrumbs from "@/components/shared/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "For Healthcare Professionals",
-  description: `Refer a patient to ${siteConfig.name} for home-based recovery, ongoing, or palliative care in Komani (Queenstown), Eastern Cape.`,
+  description: `Refer a patient to ${siteConfig.name} for home-based recovery, ongoing, or palliative care.`,
 };
 
 const referralPathway = [

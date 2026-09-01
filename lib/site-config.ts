@@ -626,6 +626,17 @@ export const teamMembers = [
   },
 ] as const;
 
+// Caregiver Qualifications — /caregiver-trust, confirmed 1 Sep 2026. Pool-level only, no
+// individual caregiver names, consistent with the 5 Aug 2026 restructure (see teamMembers and
+// ourCaregivers above) — caregiver assignments change per contract, so qualifications are
+// described for the pool as a whole rather than by name.
+export const caregiverQualifications = {
+  clinicalOversight:
+    "Every caregiver works under the qualified clinical oversight of our Registered Nurse, Midwife, and Educator, with over two decades of experience in the field.",
+  poolTraining:
+    "Caregivers in our pool have completed home-care training programs, hold HIV counselling certification, and bring a minimum of three years' field experience in home-based care.",
+} as const;
+
 // Generic caregiver description block — replaces individual caregiver profiles (per client
 // feedback, 5 Aug 2026): assignments change per contract, so caregivers are represented
 // collectively rather than by name/photo. Only Azande and Elizabeth remain named/photographed.

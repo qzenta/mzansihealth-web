@@ -61,4 +61,24 @@ export const faqs = [
     answer:
       "Reach out via phone, WhatsApp, or the contact form and our team will get back to you promptly to discuss your needs and next steps.",
   },
+  {
+    question: "Do you provide overnight or live-in care?",
+    answer:
+      "Yes — our 24-Hour Live-In and Hourly Care service covers everything from a few hours of daily support to round-the-clock live-in care.",
+  },
+  {
+    question: "How are caregivers selected and supervised?",
+    answer:
+      "Caregivers are matched per contract to suit each client's care requirements, and every caregiver works under the direct clinical supervision of our Registered Nurse and Clinical Manager, Elizabeth Ratau.",
+  },
+  {
+    question: "How much does home care cost?",
+    answer:
+      "Pricing depends on the type and hours of care required. Contact us for a care assessment and we'll discuss a care arrangement and cost suited to your situation.",
+  },
+  {
+    question: "Is Mzansi HealthCare an emergency medical service?",
+    answer:
+      "No. We provide scheduled home healthcare, not emergency response. In a medical emergency, call 10177 (ambulance) or 112 from a mobile phone.",
+  },
 ];

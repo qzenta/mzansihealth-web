@@ -19,7 +19,12 @@ export default function OurTeamPage() {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema(member)) }}
         />
       ))}
-      <PageBanner title="Our Team" image={pageBanners.ourTeam} tall />
+      <PageBanner
+        title="Our Team"
+        image={pageBanners.ourTeam}
+        tall
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Our Team" }]}
+      />
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />
         <div className="relative mx-auto max-w-4xl px-4 sm:px-6">

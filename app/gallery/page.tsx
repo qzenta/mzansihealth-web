@@ -11,7 +11,12 @@ export const metadata: Metadata = {
 export default function GalleryPage() {
   return (
     <>
-      <PageBanner title="Gallery" image={pageBanners.gallery} tall />
+      <PageBanner
+        title="Gallery"
+        image={pageBanners.gallery}
+        tall
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Gallery" }]}
+      />
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6">

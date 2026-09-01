@@ -3,6 +3,7 @@ import Link from "next/link";
 import { siteConfig, teamMembers } from "@/lib/site-config";
 import TrackPageView from "@/components/shared/TrackPageView";
 import TrackedLink from "@/components/shared/TrackedLink";
+import Breadcrumbs from "@/components/shared/Breadcrumbs";
 
 export const metadata: Metadata = {
   title: "For Healthcare Professionals",
@@ -24,15 +25,16 @@ export default function HealthcareProfessionalsPage() {
   return (
     <>
       <TrackPageView event="referral_page_view" />
-      <section className="bg-primary-dark py-16 text-center text-white sm:py-20">
+      <section className="bg-primary-dark py-8 text-center text-white sm:py-10">
         <div className="mx-auto max-w-3xl px-4 sm:px-6">
-          <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">For Healthcare Professionals</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">
+          <h1 className="text-2xl font-extrabold tracking-tight sm:text-3xl">For Healthcare Professionals</h1>
+          <p className="mx-auto mt-3 max-w-2xl text-base text-white/90">
             Refer patients for professional home-based care — coordinated directly with you and
             the family.
           </p>
         </div>
       </section>
+      <Breadcrumbs items={[{ label: "Home", href: "/" }, { label: "Healthcare Professionals" }]} />
 
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />

@@ -6,6 +6,7 @@ import { emergencyNotice, services, serviceDetails, teamMembers } from "@/lib/si
 import { breadcrumbSchema, faqSchema, serviceSchema } from "@/lib/schema";
 import TrackPageView from "@/components/shared/TrackPageView";
 import ConversionCta from "@/components/shared/ConversionCta";
+import Breadcrumbs from "@/components/shared/Breadcrumbs";
 
 interface ServicePageProps {
   params: Promise<{ slug: string }>;
@@ -73,11 +74,14 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
           <div className="absolute inset-0 bg-primary-dark/60" />
           <div className="absolute inset-0 bg-gradient-to-t from-primary-dark/90 via-primary-dark/40 to-transparent" />
         </div>
-        <div className="relative mx-auto flex min-h-[280px] max-w-6xl flex-col justify-center px-4 py-16 text-center sm:px-6">
-          <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl">{service.name}</h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-white/90">{service.description}</p>
+        <div className="relative mx-auto flex min-h-[180px] max-w-6xl flex-col justify-center px-4 py-8 text-center sm:px-6">
+          <h1 className="text-2xl font-extrabold tracking-tight text-white sm:text-3xl">{service.name}</h1>
+          <p className="mx-auto mt-3 max-w-2xl text-base text-white/90">{service.description}</p>
         </div>
       </section>
+      <Breadcrumbs
+        items={[{ label: "Home", href: "/" }, { label: "Services", href: "/services" }, { label: service.name }]}
+      />
 
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />

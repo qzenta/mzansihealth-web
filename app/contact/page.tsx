@@ -18,6 +18,7 @@ export default function ContactPage() {
         subtitle="Tell us about the care needed and our team will get back to you as soon as possible."
         image={pageBanners.contact}
         tall
+        breadcrumbs={[{ label: "Home", href: "/" }, { label: "Contact" }]}
       />
       <section className="relative overflow-hidden bg-secondary/25 py-16">
         <div className="bg-dot-texture-dark pointer-events-none absolute inset-0 opacity-15" aria-hidden="true" />

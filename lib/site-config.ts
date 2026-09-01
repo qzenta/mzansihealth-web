@@ -562,6 +562,34 @@ export const howItWorks = [
   },
 ] as const;
 
+// Resource Centre architecture — handoff §18. Priority topics for future articles/care guides:
+//   1. What to expect after hospital discharge
+//   2. When an elderly person may need home care
+//   3. Hourly vs live-in care
+//   4. Preparing a home for recovery
+//   5. How families can choose a home-care provider
+//   6. What post-hospital home care involves
+//   7. Understanding palliative home care
+//   8. Supporting someone living with chronic illness
+// No articles are written or published here — §18 requires clinical review before publishing
+// any healthcare content, and no review workflow exists yet. Per §18's own fallback rule
+// ("mark content as DRAFT — NOT FOR PUBLICATION" if no review workflow can be established), the
+// safer choice is to publish zero draft article content rather than risk publishing something
+// that reads as reviewed clinical guidance. The array below is the intended shape for when
+// content is ready and reviewed.
+export const resourceArticles: {
+  slug: string;
+  title: string;
+  excerpt: string;
+  status: "draft" | "published";
+}[] = [];
+
+// Testimonials — handoff §20 / D5. No genuine testimonials exist yet (confirmed, not assumed).
+// This array stays empty until Daniel supplies consented, attributed testimonials; the
+// Testimonials component below renders nothing when it's empty, so no page shows a visible
+// "coming soon" placeholder that reads as thin. Do not fabricate entries here.
+export const testimonials: { quote: string; author: string }[] = [];
+
 // Emergency notice — handoff §17. Verified South African public emergency numbers only; do not
 // add response-time claims or imply Mzansi HealthCare is an emergency medical service.
 export const emergencyNotice = {

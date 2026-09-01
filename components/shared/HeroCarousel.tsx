@@ -4,6 +4,7 @@ import { useCallback, useEffect, useRef, useState, type ReactNode } from "react"
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig, heroStats } from "@/lib/site-config";
+import { trackEvent } from "@/lib/analytics";
 
 interface HeroCarouselProps {
   slides: readonly {
@@ -144,6 +145,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
           <div className="animate-fade-in-up mt-5 flex flex-wrap justify-center gap-4 sm:justify-end [animation-delay:300ms]">
             <a
               href={`tel:${siteConfig.phoneIntl}`}
+              onClick={() => trackEvent("phone_click", { page: "hero", line: "primary" })}
               className="rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:bg-primary-dark"
             >
               Call Now
@@ -155,6 +157,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
                     href={siteConfig.whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent("whatsapp_click", { page: "hero", line: "primary" })}
                     className="rounded-full bg-secondary px-5 py-2.5 text-center text-sm font-semibold text-primary-dark shadow-lg transition hover:opacity-90"
                   >
                     Main Line
@@ -163,6 +166,7 @@ export default function HeroCarousel({ slides, intervalMs = 6000 }: HeroCarousel
                     href={siteConfig.whatsappSecondaryLink}
                     target="_blank"
                     rel="noopener noreferrer"
+                    onClick={() => trackEvent("whatsapp_click", { page: "hero", line: "secondary" })}
                     className="rounded-full bg-secondary px-5 py-2.5 text-center text-sm font-semibold text-primary-dark shadow-lg transition hover:opacity-90"
                   >
                     Alternate Line

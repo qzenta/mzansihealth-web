@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/gallery",
     "/our-team",
     "/caregiver-trust",
+    "/for-healthcare-professionals",
     "/contact",
     "/faq",
     "/privacy-policy",

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site-config";
+import CookiePreferencesLink from "@/components/shared/CookiePreferencesLink";
 
 const quickLinks = [
   { href: "/about", label: "About" },
@@ -118,6 +119,7 @@ export default function Footer() {
                 {link.label}
               </Link>
             ))}
+            <CookiePreferencesLink />
           </div>
         </div>
       </div>

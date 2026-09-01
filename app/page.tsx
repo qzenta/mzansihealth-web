@@ -23,9 +23,9 @@ export const metadata: Metadata = {
   // Root page title.template inheritance from layout.tsx doesn't apply to the "/" segment
   // itself in this Next.js version (verified: every other page gets "X | Mzansi HealthCare"
   // via the template, this one didn't) — so the brand suffix is appended explicitly here.
-  title: "Home Care Services in Komani (Queenstown) | Mzansi HealthCare",
+  title: "Home Care Services Across South Africa | Mzansi HealthCare",
   description:
-    "Professional home healthcare in Komani (Queenstown) and surrounding areas, Eastern Cape — qualified caregivers, personalised care plans, and clinical oversight.",
+    "Professional home healthcare across South Africa, based in Queenstown, Eastern Cape — qualified caregivers, personalised care plans, and clinical oversight.",
 };
 
 export default function HomePage() {
@@ -246,7 +246,7 @@ export default function HomePage() {
           <h2 className="text-2xl font-extrabold tracking-tight text-primary sm:text-3xl">Where We Serve</h2>
           <p className="mt-4 text-foreground/80">
             {siteConfig.name} is based in {siteConfig.address}, providing home healthcare across
-            Queenstown / Komani and the surrounding Eastern Cape area.
+            {" "}{siteConfig.serviceArea}.
           </p>
         </div>
       </section>

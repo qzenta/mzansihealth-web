@@ -5,7 +5,7 @@ export const siteConfig = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.mzansihealth.co.za",
   tagline: "Compassionate Home Healthcare You Can Trust",
   description:
-    "Professional home and community care for individuals and families in Komani (Queenstown) and surrounding areas, Eastern Cape.",
+    "Professional home and community care for individuals and families throughout South Africa — based in Queenstown, Eastern Cape.",
   // Primary line, used for the main Call/WhatsApp CTAs everywhere.
   phone: "0756211562",
   phoneIntl: "+27756211562",
@@ -31,7 +31,7 @@ export const siteConfig = {
     postalCode: "5319",
     addressRegion: "Eastern Cape",
   },
-  serviceArea: "Komani (Queenstown) and surrounding areas, Eastern Cape",
+  serviceArea: "South Africa",
   mapQuery: "15 Red Duiker Road, Madeira Park, Queenstown, 5319, Eastern Cape, South Africa",
 } as const;
 
@@ -48,7 +48,7 @@ export const heroImages = [
     objectPosition: "73% 0%",
     headline: "Compassionate Home Healthcare You Can Trust",
     description:
-    "Professional home and community care for individuals and families in Komani (Queenstown) and surrounding areas, Eastern Cape.",
+    "Professional home and community care for individuals and families throughout South Africa — based in Queenstown, Eastern Cape.",
   },
   {
     src: "/images/service-home-nursing.jpg",
@@ -107,7 +107,7 @@ export const pageBanners = {
 // internal icon set.
 export const heroStats = [
   { icon: "users", title: "Qualified Caregivers", description: "Trained & Experienced" },
-  { icon: "map-pin", title: "Home Visits", description: "Komani & Surrounds" },
+  { icon: "map-pin", title: "Home Visits", description: "Nationwide" },
   { icon: "shield-check", title: "Trusted Care", description: "Compassionate & Reliable" },
   { icon: "clock", title: "Flexible Scheduling", description: "Hourly to 24-Hour" },
 ] as const;
@@ -129,7 +129,7 @@ export const trustBadges = [
   { label: "Home Visits" },
   { label: "Flexible Scheduling" },
   { label: "Qualified Caregivers" },
-  { label: "Local Home Visits" },
+  { label: "Nationwide Service" },
 ] as const;
 
 // Service card photos are free-license Pexels stock (sample imagery), not real client/caregiver

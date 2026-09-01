@@ -4,7 +4,7 @@ import { about, pageBanners, siteConfig, values } from "@/lib/site-config";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: `Learn about ${siteConfig.name} and our commitment to compassionate home healthcare in Komani (Queenstown), Eastern Cape.`,
+  description: `Learn about ${siteConfig.name} and our commitment to compassionate home healthcare.`,
 };
 
 export default function AboutPage() {

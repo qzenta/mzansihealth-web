@@ -143,6 +143,7 @@ export default function HomePage() {
                 description={service.description}
                 image={service.image}
                 objectPosition={service.objectPosition}
+                slug={service.slug}
               />
             ))}
 

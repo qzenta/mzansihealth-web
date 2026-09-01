@@ -27,6 +27,7 @@ export default function ServicesPage() {
                 description={service.description}
                 image={service.image}
                 objectPosition={service.objectPosition}
+                slug={service.slug}
               />
             ))}
           </div>

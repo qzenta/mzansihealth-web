@@ -1,14 +1,16 @@
 import Image from "next/image";
+import Link from "next/link";
 
 interface ServiceCardProps {
   name: string;
   description: string;
   image: string;
   objectPosition?: string;
+  slug?: string;
 }
 
-export default function ServiceCard({ name, description, image, objectPosition }: ServiceCardProps) {
-  return (
+export default function ServiceCard({ name, description, image, objectPosition, slug }: ServiceCardProps) {
+  const card = (
     <div className="group overflow-hidden rounded-2xl border border-neutral bg-secondary/10 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       <div className="relative aspect-video w-full overflow-hidden">
         <Image
@@ -23,7 +25,10 @@ export default function ServiceCard({ name, description, image, objectPosition }
       <div className="p-6">
         <h3 className="text-lg font-semibold text-primary">{name}</h3>
         <p className="mt-2 text-sm text-foreground/80">{description}</p>
+        {slug && <span className="mt-3 inline-block text-sm font-semibold text-primary">Learn more →</span>}
       </div>
     </div>
   );
+
+  return slug ? <Link href={`/services/${slug}`}>{card}</Link> : card;
 }

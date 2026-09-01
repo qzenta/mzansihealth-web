@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { siteConfig } from "@/lib/site-config";
+import { services, siteConfig } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/terms",
     "/popia",
     "/consent",
+    ...services.map((service) => `/services/${service.slug}`),
   ];
 
   return routes.map((route) => ({

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import HeroCarousel from "@/components/shared/HeroCarousel";
@@ -16,6 +17,15 @@ import {
   whyChooseUs,
 } from "@/lib/site-config";
 import { faqSchema, faqs } from "@/lib/schema";
+
+export const metadata: Metadata = {
+  // Root page title.template inheritance from layout.tsx doesn't apply to the "/" segment
+  // itself in this Next.js version (verified: every other page gets "X | Mzansi HealthCare"
+  // via the template, this one didn't) — so the brand suffix is appended explicitly here.
+  title: "Home Care Services in Komani (Queenstown) | Mzansi HealthCare",
+  description:
+    "Professional home healthcare in Komani (Queenstown) and surrounding areas, Eastern Cape — qualified caregivers, personalised care plans, and clinical oversight.",
+};
 
 export default function HomePage() {
   return (

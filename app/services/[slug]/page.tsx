@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   if (!service) return {};
 
   return {
-    title: service.name,
-    description: service.description,
+    title: `${service.name} in Komani (Queenstown)`,
+    description: `${service.description} Serving Komani (Queenstown) and surrounding areas, Eastern Cape.`,
   };
 }
 

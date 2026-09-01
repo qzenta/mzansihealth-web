@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { resourceArticles, siteConfig } from "@/lib/site-config";
 import ConversionCta from "@/components/shared/ConversionCta";
 
-// Deliberately not linked from nav or sitemap.ts yet — no reviewed articles exist (see the
-// resourceArticles comment in site-config.ts). Reachable by direct URL only until content is
-// ready, so it doesn't get indexed as a thin page.
+// Linked from nav as "Blog" (Daniel's explicit request, 1 Sep 2026) and in sitemap.ts. Still no
+// reviewed articles exist (see the resourceArticles comment in site-config.ts) — the honest
+// "coming soon" copy below is what makes this safe to link/index rather than a thin page.
 export const metadata: Metadata = {
   title: "Care Guides & Resources",
   description: `Articles and care guides from ${siteConfig.name} — coming soon.`,
